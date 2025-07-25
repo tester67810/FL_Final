@@ -1,0 +1,331 @@
+/* ========== Base Layout ========== */
+.booking-layout2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 40px auto;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  padding: 0 20px;
+}
+
+.booking-form2 {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.sidebar2 {
+  flex: 0 0 340px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar-card2 {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+}
+
+.sidebar-card2 h3,
+.sidebar-card2 h4 {
+  margin: 0 0 10px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.sidebar-card2 p,
+.sidebar-card2 li {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.sidebar-card2 ul {
+
+  padding: 0;
+  margin: 10px 0;
+}
+
+.total-price2 {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: right;
+}
+
+.total-price2 span {
+  color: #0070f3;
+}
+
+.live-reviews2 .stars2 {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #ffb400;
+}
+
+.next-review2 {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #a16260;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.next-review2:hover {
+  text-decoration: underline;
+}
+
+/* ========== Headings & Subheadings ========== */
+.section-title2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #333;
+}
+
+.subheading2 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.form-group2 {
+  margin-bottom: 25px;
+}
+
+.info-block2 {
+  background: #f9f9f9;
+  border-left: 4px solid #b07473;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.info-block2 h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.info-block2 p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+/* ========== Inputs, Selects, Textareas ========== */
+.booking-form2 input[type="text"],
+.booking-form2 input[type="email"],
+.booking-form2 input[type="tel"],
+.booking-form2 input[type="date"],
+.booking-form2 select,
+.booking-form2 textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  background: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: #333;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.booking-form2 input:focus,
+.booking-form2 textarea:focus,
+.booking-form2 select:focus {
+  outline: none;
+  border-color: #b07473;
+  box-shadow: 0 0 3px rgba(176, 116, 115, 0.4);
+}
+
+/* ========== Button Groups ========== */
+.button-group2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button-group-button2 {
+  padding: 8px 26px;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+
+.button-selected2 {
+  background: #b07473;
+  color: #fff;
+  border-color: #994c4b;
+}
+
+/* ========== Area Row ========== */
+.area-row2 {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.area-row2 input,
+.area-row2 select {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* ========== Extras Section ========== */
+.extras-section2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f5f5f5;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.extras-section2 img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ========== Coupon Section ========== */
+.coupon-section2 {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.coupon-section2 input {
+  flex: 2;
+  min-width: 200px;
+}
+
+.apply-button2 {
+  padding: 10px 18px;
+  background: #b07473;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.apply-button2:hover {
+  background: #a16260;
+}
+
+/* ========== Checkboxes & Radios ========== */
+.checkbox-container2,
+.final-checkbox2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.checkbox-container2 label,
+.final-checkbox2 label {
+  font-size: 14px;
+  color: #444;
+
+}
+
+.radio-options2 {
+  display: flex;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+/* ========== Card Input ========== */
+.card-input2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.card-input2 input {
+  flex: 1;
+}
+
+/* ========== Notes ========== */
+.note-textarea2 {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  background: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 80px;
+  margin-top: 10px;
+}
+
+/* ========== Submit Button ========== */
+.submit-button2 {
+  width: 100%;
+  padding: 14px 0;
+  background: #b07473;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button2:hover {
+  background: #a16260;
+}
+
+/* ========== Responsive Fix ========== */
+@media (max-width: 1024px) {
+  .booking-layout2 {
+    flex-direction: column;
+  }
+
+  .booking-form2,
+  .sidebar2 {
+    max-width: 100%;
+  }
+
+  .sidebar2 {
+    padding: 15px;
+  }
+
+  .area-row2 {
+    flex-direction: column;
+  }
+
+  .coupon-section2 {
+    flex-direction: column;
+  }
+
+  .card-input2 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
