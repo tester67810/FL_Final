@@ -110,9 +110,10 @@ function BookingForm4() {
         process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
       );
 
-      const response = await fetch(
-        "http://localhost:5000/create-checkout-session",
-        {
+
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/create-checkout-session`, {
+
+      
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

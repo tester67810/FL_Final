@@ -104,8 +104,9 @@
 // const PORT = 5000;
 // app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
 
+require("dotenv").config(); // No need to provide path — default is current directory
 
-require("dotenv").config({ path: __dirname + "/../.env" });
+
 
 const express = require("express");
 const cors = require("cors");
