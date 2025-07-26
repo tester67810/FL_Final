@@ -1,18 +1,22 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "../Styles/Blog.css";
-import heroImg from "../Assets/roof1.jpg";
-import blog1 from "../Assets/House-cleaning1.jpg"
-import blog2 from "../Assets/House-cleaning2.webp"
-import blog3 from "../Assets/car2.webp"
-import blog4 from "../Assets/car1.png"
-import blog5 from "../Assets/gutter1.jpg"
-import blog6 from "../Assets/deep1.jpg"
-import blog7 from "../Assets/deep2.jpg"
-import blog8 from "../Assets/deep3.jpg"
-import blog9 from "../Assets/final1.jpg"
+
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+
+// Import all images from src/Assets
+import heroImg from "../Assets/roof1.jpg";
+import blog1 from "../Assets/House-cleaning1.jpg";
+import blog2 from "../Assets/House-cleaning2.webp";
+import blog3 from "../Assets/car2.webp";
+import blog4 from "../Assets/car1.png";
+import blog5 from "../Assets/gutter1.jpg";
+import blog6 from "../Assets/deep1.jpg";
+import blog7 from "../Assets/deep2.jpg";
+import blog8 from "../Assets/deep3.jpg";
+import blog9 from "../Assets/final1.jpg";
+
 
 const blogPosts = [
   {
