@@ -209,3 +209,11 @@ function Service13() {
 
 export default Service13;
 
+/*
+1. believe you are already there 
+2. god chill zone you are there for me, things will fall into place, balance both world
+3. health career relation wealth
+4. feeling, thoughts, belief, action
+5. frequency just match it, radio 
+
+*/
