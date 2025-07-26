@@ -87,10 +87,10 @@ export default App;
 4. domain name 
 
 
-form contact
-blogs image dec
+form contact = done
+blogs image dec = done
 blog 1 not visible 
-remove tick marks in service
+remove tick marks in service = done
 booking tag and side section
 
 

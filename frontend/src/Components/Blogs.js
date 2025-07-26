@@ -96,10 +96,11 @@ function Blog() {
         style={{
           backgroundImage: `url(${heroImg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
+      
         }}
       >
-        <div className="overlay-content">
+        <div className="overlay-content" style={{    marginTop:"20%"}}>
           <h1>Our Blog</h1>
           <h2>Tips, Insights & Inspiration</h2>
           <p>

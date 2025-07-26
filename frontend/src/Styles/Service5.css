@@ -168,7 +168,7 @@
   width: fit-content;
 }
 
-.roof-services-list li::before {
+/* .roof-services-list li::before {
   content: "✔";
   position: absolute;
   left: 0;
@@ -176,7 +176,7 @@
   color: #8b5050;
   font-weight: bold;
   font-size: 18px;
-}
+} */
 
 .services-list ul {
   list-style: none;
