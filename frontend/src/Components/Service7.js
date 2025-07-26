@@ -166,7 +166,7 @@ function Service7() {
       {/* FAQ Section */}
       <section className="faq-section">
         <div className="faq-header">
-          <div className="faq-icon">💬</div>
+        
           <h2>Common Questions</h2>
         </div>
         <div className="faq-list">
