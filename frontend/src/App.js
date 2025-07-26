@@ -87,5 +87,11 @@ export default App;
 4. domain name 
 
 
+form contact
+blogs image dec
+blog 1 not visible 
+remove tick marks in service
+booking tag and side section
+
 
 */
