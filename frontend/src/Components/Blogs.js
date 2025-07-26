@@ -100,7 +100,7 @@ function Blog() {
       
         }}
       >
-        <div className="overlay-content" style={{    marginTop:"20%"}}>
+        <div className="overlay-content123">
           <h1>Our Blog</h1>
           <h2>Tips, Insights & Inspiration</h2>
           <p>

@@ -8,6 +8,12 @@
   margin: auto;
 }
 
+.overlay-content123{
+  margin-top: 60px;
+  color: black;
+
+}
+
 /* Blog Card */
 .blog-card {
   background: #fff;
