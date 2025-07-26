@@ -198,7 +198,7 @@ function Service6() {
         <h2>LET'S DO IT!</h2>
         <p>Book your gutter cleaning with Ivory Standard — keep your home safe and dry!</p>
         <div className="buttons">
-          <Link to="/booking1">
+          <Link to="/booking2">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

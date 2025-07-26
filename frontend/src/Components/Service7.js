@@ -198,7 +198,7 @@ function Service7() {
         <h2>LET'S DO IT!</h2>
         <p>Book your house washing with Ivory Standard — restore your home’s curb appeal today!</p>
         <div className="buttons">
-          <Link to="/booking1">
+          <Link to="/booking2">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

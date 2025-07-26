@@ -78,3 +78,14 @@ function App() {
 }
 
 export default App;
+
+
+/*
+1. Responsive 
+2. Read Content
+3. All Data one mail id 
+4. domain name 
+
+
+
+*/

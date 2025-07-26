@@ -1,9 +1,7 @@
 /* --- Navbar Container --- */
 .navbar1 {
-  position: sticky;
-  top: 120px;
   width: 40%;
-  margin: 1% auto;
+  margin: 2% auto;
   padding: 1.2% 2%;
   background-color: white;
   display: flex;
@@ -14,6 +12,7 @@
   border-radius: 20px;
   flex-wrap: wrap;
 }
+
 
 /* Navigation Links */
 .nav-links1 {

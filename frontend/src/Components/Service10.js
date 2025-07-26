@@ -198,7 +198,7 @@ function Service10() {
         <h2>LET'S DO IT!</h2>
         <p>Book your construction final clean with Ivory Standard — and open the doors to a spotless, ready-to-enjoy space!</p>
         <div className="buttons">
-          <Link to="/booking1">
+          <Link to="/booking4">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

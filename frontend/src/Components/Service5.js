@@ -198,7 +198,7 @@ function Service5() {
         <h2>LET'S DO IT!</h2>
         <p>Book your roof cleaning today with Ivory Standard—where quality always comes first.</p>
         <div className="buttons">
-          <Link to="/booking1">
+          <Link to="/booking2">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

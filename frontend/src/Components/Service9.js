@@ -198,7 +198,7 @@ function Service9() {
         <h2>LET'S DO IT!</h2>
         <p>Book your carpet and upholstery cleaning today with Ivory Standard — and enjoy a fresher, cleaner home!</p>
         <div className="buttons">
-          <Link to="/booking1">
+          <Link to="/booking3">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

@@ -198,7 +198,7 @@ function Service13() {
         <h2>LET'S DO IT!</h2>
         <p>Book your vacation rental cleaning today with Ivory Standard — 5-star reviews start with a spotless stay!</p>
         <div className="buttons">
-          <Link to="/booking1">
+          <Link to="/booking4">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

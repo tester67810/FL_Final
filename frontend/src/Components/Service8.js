@@ -198,7 +198,7 @@ function Service8() {
         <h2>LET'S DO IT!</h2>
         <p>Book your pressure washing today with Ivory Standard — bring your outdoor surfaces back to life!</p>
         <div className="buttons">
-          <Link to="/booking1">
+          <Link to="/booking2">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

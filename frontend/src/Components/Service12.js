@@ -198,7 +198,7 @@ function Service12() {
         <h2>LET'S DO IT!</h2>
         <p>Book your retail cleaning today with Ivory Standard — your store deserves to shine every day.</p>
         <div className="buttons">
-          <Link to="/booking1">
+          <Link to="/booking4">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

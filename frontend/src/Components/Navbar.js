@@ -15,7 +15,10 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src={logoc} alt="Logo" />
+          <Link to="/">
+                     <img src={logoc} alt="Logo" />
+                  </Link>
+       
       </div>
 
       <button className="menu-toggle" onClick={toggleMenu}>☰</button>

@@ -8,19 +8,20 @@ import user3 from "../Assets/testimonial3.jpg";
 
 const testimonials = [
   {
-    quoteTitle: "Impeccable Results",
+    quoteTitle: "Nothing Less Than Perfect",
     quoteText:
       "Ivory Standard exceeded our expectations. The team was punctual, professional, and left our home sparkling. We've already booked our next service!",
     userImage: user1,
-    name: "Neha Sharma",
+    name: "Emma Johnson",
     position: "Homeowner, Bengaluru",
+
   },
   {
     quoteTitle: "Reliable & Trustworthy",
     quoteText:
       "As a business owner, I value efficiency and trust. Ivory Standard delivers spotless cleaning with zero and stress free hassle. Highly dependable crew!",
     userImage: user2,
-    name: "Ravi Malhotra",
+    name: "James Miller",
     position: "Café Owner, Pune",
   },
   {
@@ -28,7 +29,7 @@ const testimonials = [
     quoteText:
       "From the first call to the final sweep, everything was handled with care and precision. My apartment has never looked better. Highly recommend!",
     userImage: user3,
-    name: "Anita Desai",
+    name: "Olivia Carter",
     position: "Interior Designer, Mumbai",
   },
 ];
