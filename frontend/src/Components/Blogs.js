@@ -91,23 +91,15 @@ function Blog() {
     <div className="blog-page">
         <Navbar/>
       {/* Hero */}
-      <section
-        className="hero-section"
-        style={{
-          backgroundImage: `url(${heroImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-      
-        }}
-      >
-        <div className="overlay-content123">
-          <h1>Our Blog</h1>
-          <h2>Tips, Insights & Inspiration</h2>
-          <p>
-            Get the latest cleaning advice, home care tips, and behind-the-scenes updates from the Ivory Standard team.
-          </p>
-        </div>
-      </section>
+      {/* Hero Section */}
+<section className="blog-hero">
+  <div className="hero-overlay">
+    <h1>Welcome to Our Blog</h1>
+    <p>Tips, tricks, and insights to keep your home sparkling and stress-free.</p>
+  </div>
+  <img src={heroImg} alt="Blog Hero" className="hero-image" />
+</section>
+
 
       {/* Blog List */}
       <section className="blog-list-section">

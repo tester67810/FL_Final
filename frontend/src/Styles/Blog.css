@@ -8,6 +8,50 @@
   margin: auto;
 }
 
+.blog-hero {
+  position: relative;
+  margin: 2rem auto;
+  width: 90%;
+  height: 60vh;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-dark overlay */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  max-width: 700px;
+}
+
+
+
 .overlay-content123{
   margin-top: 60px;
   color: black;
