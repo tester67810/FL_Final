@@ -34,6 +34,12 @@ import Booking4 from "./Pages/Booking4";
 import SinglePost from "./Components/SinglePost"
 import SuccessPage from "./Pages/SuccessPage";
 import CancelPage from "./Pages/CancelPage";
+import BlogP1 from "./Pages/BlogP1";
+import BlogP2 from "./Pages/BlogP2";
+import BlogP3 from "./Pages/BlogP3";
+import BlogP4 from "./Pages/BlogP4";
+import BlogP5 from "./Pages/BlogP5";
+import BlogP6 from "./Pages/BlogP6";
 
 function App() {
   return (
@@ -69,6 +75,12 @@ function App() {
           <Route path="*" element={<NotFound />} />
             <Route path="/success" element={<SuccessPage/>} />
         <Route path="/cancel" element={<CancelPage />} />
+            <Route path="/blog1" element={<BlogP1 />} />
+          <Route path="/blog2" element={<BlogP2 />} />
+          <Route path="/blog3" element={<BlogP3 />} />
+          <Route path="/blog4" element={<BlogP4 />} />
+          <Route path="/blog5" element={<BlogP5 />} />
+          <Route path="/blog6" element={<BlogP6 />} />
         </Routes>
 
         <ScrollUpButton />
@@ -89,9 +101,9 @@ export default App;
 
 form contact = done
 blogs image dec = done
-blog 1 not visible 
+blog 1 not visible = rem 
 remove tick marks in service = done
-booking tag and side section
-
+booking tag and side section = done
+domain = rem
 
 */
