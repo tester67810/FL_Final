@@ -40,6 +40,8 @@ import BlogP3 from "./Pages/BlogP3";
 import BlogP4 from "./Pages/BlogP4";
 import BlogP5 from "./Pages/BlogP5";
 import BlogP6 from "./Pages/BlogP6";
+import AboutPage from "./Pages/AboutPage";
+import FaqPage from "./Pages/FaqPage";
 
 function App() {
   return (
@@ -67,10 +69,10 @@ function App() {
           <Route path="/retail-space" element={<Service12Page />} />
           <Route path="/vrbo-and-airbnb" element={<Service13Page />} />
     <Route path="/blog/:id" element={<SinglePost />} />
-          <Route path="/booking1" element={<Booking />} />
-          <Route path="/booking2" element={<Booking2 />} />
-          <Route path="/booking3" element={<Booking3 />} />
-          <Route path="/booking4" element={<Booking4 />} />
+          <Route path="/house_cleaning" element={<Booking />} />
+          <Route path="/exterior_cleaning" element={<Booking2 />} />
+          <Route path="/carpet_cleaning" element={<Booking3 />} />
+          <Route path="/commercial_cleaning" element={<Booking4 />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="*" element={<NotFound />} />
             <Route path="/success" element={<SuccessPage/>} />
@@ -81,6 +83,8 @@ function App() {
           <Route path="/blog4" element={<BlogP4 />} />
           <Route path="/blog5" element={<BlogP5 />} />
           <Route path="/blog6" element={<BlogP6 />} />
+          <Route path="/about" element={<AboutPage/>} />
+           <Route path="/faqs" element={<FaqPage/>} />
         </Routes>
 
         <ScrollUpButton />
@@ -92,18 +96,3 @@ function App() {
 export default App;
 
 
-/*
-1. Responsive 
-2. Read Content
-3. All Data one mail id 
-4. domain name 
-
-
-form contact = done
-blogs image dec = done
-blog 1 not visible = rem 
-remove tick marks in service = done
-booking tag and side section = done
-domain = rem
-
-*/

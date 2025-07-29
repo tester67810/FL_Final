@@ -1,5 +1,14 @@
 /* Desktop (Original View) */
 .ba-section {
+  padding: 35px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background-color: #e5dbce;
+}
+
+.ba-inner-section{
   padding: 70px 32px;
   display: flex;
   justify-content: center;
@@ -8,11 +17,27 @@
   background-color: white;
 }
 
+.ba-satisfaction-button {
+  display: inline-block;
+  background-color: #b07473;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
 /* Image */
 .ba-image-content {
   width: 50%;
   max-width: 100%;
   text-align: center;
+  background-color: white;
 }
 .ba-image1 {
   width: 500px;
@@ -22,6 +47,7 @@
 /* Text */
 .ba-text-content {
   width: 50%;
+  background-color: white;
 }
 .ba-title {
   font-family: 'Poppins', sans-serif;

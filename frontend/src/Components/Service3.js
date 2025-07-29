@@ -64,7 +64,7 @@ function Service3() {
           <p>
             Bring your home back to pristine condition with Ivory Standard’s deep cleaning service. We handle what regular cleaning misses, reaching every corner and hidden spot.
           </p>
-         <Link to="/booking1"><button className="dark-btn">Get Started</button></Link>
+         <Link to="/house_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -198,7 +198,7 @@ function Service3() {
         <h2>LET'S DO IT!</h2>
         <p>Book your deep cleaning today with Ivory Standard — and enjoy a spotless home again!</p>
         <div className="buttons">
-          <Link to="/booking1"><button className="dark-btn">Book Now</button></Link>
+          <Link to="/house_cleaning"><button className="dark-btn">Book Now</button></Link>
         </div>
       </section>
     </div>

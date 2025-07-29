@@ -64,7 +64,7 @@ function Service12() {
           <p>
             Keep your retail store sparkling clean, welcoming, and safe for every customer. Ivory Standard’s professional retail cleaning keeps your shop ready for business every day.
           </p>
-        <Link to="/booking4"><button className="dark-btn">Get Started</button></Link>
+        <Link to="/commercial_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -198,7 +198,7 @@ function Service12() {
         <h2>LET'S DO IT!</h2>
         <p>Book your retail cleaning today with Ivory Standard — your store deserves to shine every day.</p>
         <div className="buttons">
-          <Link to="/booking4">
+          <Link to="/commercial_cleaning">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

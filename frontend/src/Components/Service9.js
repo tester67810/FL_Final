@@ -64,7 +64,7 @@ function Service9() {
           <p>
             Ivory Standard’s carpet and upholstery cleaning lifts away deep-set dirt, allergens, and odors — leaving your fabrics soft, fresh, and revitalized.
           </p>
-        <Link to="/booking3"><button className="dark-btn">Get Started</button></Link>
+        <Link to="/carpet_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -198,7 +198,7 @@ function Service9() {
         <h2>LET'S DO IT!</h2>
         <p>Book your carpet and upholstery cleaning today with Ivory Standard — and enjoy a fresher, cleaner home!</p>
         <div className="buttons">
-          <Link to="/booking3">
+          <Link to="/carpet_cleaning">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

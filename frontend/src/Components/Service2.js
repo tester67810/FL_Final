@@ -64,7 +64,7 @@ function Service2() {
           <p>
             Make moving day easier with Ivory Standard’s detailed move-out and move-in cleaning. We ensure every corner is spotless so you or the next residents start fresh.
           </p>
-       <Link to="/booking1"><button className="dark-btn">Get Started</button></Link>
+       <Link to="/house_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -100,9 +100,10 @@ function Service2() {
           <div>
             <h2 className="heading01">Why Choose Us for Move Out & Move In Cleaning?</h2>
             <br />
-            <p className="para02">
-              With Ivory Standard, you get trusted, insured, and detail-oriented professionals. We help you meet lease requirements, get deposits back, and move in without the worry of leftover mess from prior tenants.
-            </p>
+           <p className="para02">
+  With Ivory Standard, you get trusted, insured, and detail-oriented professionals. We ensure your space is cleaned thoroughly and ready for whatever comes next—whether it's a fresh start, a big move, or simply peace of mind.
+</p>
+
             <br />
           </div>
           <img src={i2} alt="About Move Cleaning" />
@@ -198,7 +199,7 @@ function Service2() {
         <h2>LET'S DO IT!</h2>
         <p>Book your move-out or move-in cleaning with Ivory Standard — and move stress-free!</p>
         <div className="buttons">
-          <Link to="/booking1"><button className="dark-btn">Book Now</button></Link>
+          <Link to="/house_cleaning"><button className="dark-btn">Book Now</button></Link>
         </div>
       </section>
     </div>

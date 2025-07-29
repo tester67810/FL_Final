@@ -64,7 +64,7 @@ function Service8() {
           <p>
             Ivory Standard’s professional pressure washing removes dirt, grime, algae, and stains from driveways, decks, patios, and more — restoring your outdoor surfaces safely and effectively.
           </p>
-         <Link to="/booking2"><button className="dark-btn">Get Started</button></Link>
+         <Link to="/exterior_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -198,7 +198,7 @@ function Service8() {
         <h2>LET'S DO IT!</h2>
         <p>Book your pressure washing today with Ivory Standard — bring your outdoor surfaces back to life!</p>
         <div className="buttons">
-          <Link to="/booking2">
+          <Link to="/exterior_cleaning">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

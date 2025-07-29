@@ -64,7 +64,7 @@ function Service7() {
           <p>
             Ivory Standard’s house washing restores your home’s exterior to its best. We safely remove dirt, mold, and grime with our proven soft wash methods — protecting paint and siding.
           </p>
-           <Link to="/booking2"><button className="dark-btn">Get Started</button></Link>
+           <Link to="/exterior_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -198,7 +198,7 @@ function Service7() {
         <h2>LET'S DO IT!</h2>
         <p>Book your house washing with Ivory Standard — restore your home’s curb appeal today!</p>
         <div className="buttons">
-          <Link to="/booking2">
+          <Link to="/exterior_cleaning">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

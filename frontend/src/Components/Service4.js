@@ -64,7 +64,7 @@ function Service4() {
           <p>
             After construction or renovation, your space deserves a meticulous final clean. Ivory Standard ensures every inch is spotless, dust-free, and ready to impress.
           </p>
-          <Link to="/booking1"><button className="dark-btn">Get Started</button></Link>
+          <Link to="/house_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -76,7 +76,7 @@ function Service4() {
             <h2 className="heading01">Our Post-Construction Service</h2>
             <br />
             <p className="para01">
-              Ivory Standard’s post-construction cleaning removes all traces of dust, debris, and leftover materials from your newly built or renovated space. We prepare the site for final inspection or immediate move-in.
+              Ivory Standard’s post-construction cleaning removes all traces of dust particles and stains from your newly built or renovated space. We prepare the site for final inspection or immediate move-in.
             </p>
             <br />
             <p className="para01">
@@ -198,7 +198,7 @@ function Service4() {
         <h2>LET'S DO IT!</h2>
         <p>Book your post-construction clean today with Ivory Standard — we’ll make it shine like new!</p>
         <div className="buttons">
-          <Link to="/booking1"><button className="dark-btn">Book Now</button></Link>
+          <Link to="/house_cleaning"><button className="dark-btn">Book Now</button></Link>
         </div>
       </section>
     </div>

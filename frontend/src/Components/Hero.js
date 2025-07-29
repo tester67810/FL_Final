@@ -32,7 +32,7 @@ function Hero() {
         <p className="subtitle">Professional cleaning that brings clarity, comfort, and care to every corner.</p>
         <p className="description">At Ivory Standard – The Cleaning Company, spotless living starts with trusted service.</p>
         <div className="hero-buttons">
-          <Link to="/booking1"><button className="btn-primary">Get Started</button></Link>
+          <Link to="/house_cleaning"><button className="btn-primary">Get Started</button></Link>
         </div>
       </div>
 

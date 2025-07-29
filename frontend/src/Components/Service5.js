@@ -39,7 +39,7 @@ function Service5() {
     {
       question: "What don’t you clean?",
       answer:
-        "We avoid roofs with major structural damage, areas requiring mold remediation, or hazardous material exposure."
+        "We avoid roofs with any structural damage, areas requiring mold remediation, or hazardous material exposure."
     }
   ];
 
@@ -64,7 +64,7 @@ function Service5() {
           <p>
             At Ivory Standard, our soft wash roof cleaning helps extend your roof's life and enhances curb appeal. We eliminate harmful moss, algae, and debris—safely and efficiently.
           </p>
-        <Link to="/booking2"><button className="dark-btn">Get Started</button></Link>
+        <Link to="/exterior_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -76,7 +76,7 @@ function Service5() {
             <h2 className="heading01">Our Roof Cleaning Service</h2>
             <br />
             <p className="para01">
-              Ivory Standard’s roof cleaning service thoroughly removes moss, algae, and surface staining—restoring your roof’s natural beauty. Our crew uses specialized methods that avoid costly scaffolding while ensuring deep, even cleaning across all roof types.
+              Ivory Standard’s roof cleaning service thoroughly removes moss, algae, and surface staining—restoring your roof’s natural beauty. 
             </p>
             <br />
             <p className="para01">
@@ -198,7 +198,7 @@ function Service5() {
         <h2>LET'S DO IT!</h2>
         <p>Book your roof cleaning today with Ivory Standard—where quality always comes first.</p>
         <div className="buttons">
-          <Link to="/booking2">
+          <Link to="/exterior_cleaning">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

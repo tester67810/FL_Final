@@ -64,7 +64,7 @@ function Service10() {
           <p>
             Ivory Standard’s construction final clean removes all dust, debris, and residue so your new build or remodel shines and is ready for move-in or inspection.
           </p>
-       <Link to="/booking4"><button className="dark-btn">Get Started</button></Link>
+       <Link to="/commercial_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -198,7 +198,7 @@ function Service10() {
         <h2>LET'S DO IT!</h2>
         <p>Book your construction final clean with Ivory Standard — and open the doors to a spotless, ready-to-enjoy space!</p>
         <div className="buttons">
-          <Link to="/booking4">
+          <Link to="/commercial_cleaning">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

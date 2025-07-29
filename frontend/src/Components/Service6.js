@@ -64,7 +64,7 @@ function Service6() {
           <p>
             Ivory Standard’s gutter cleaning service removes debris and buildup that can cause leaks and structural damage. Keep your home safe with our reliable and thorough team.
           </p>
-            <Link to="/booking2"><button className="dark-btn">Get Started</button></Link>
+            <Link to="/exterior_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -118,7 +118,7 @@ function Service6() {
           <li>Removal of Leaves & Debris</li>
           <li>Flushing of Downspouts</li>
           <li>Inspection for Blockages</li>
-          <li>Gutter Condition Report</li>
+          
           <li>Safe Cleanup & Disposal</li>
         </ul>
       </section>
@@ -198,7 +198,7 @@ function Service6() {
         <h2>LET'S DO IT!</h2>
         <p>Book your gutter cleaning with Ivory Standard — keep your home safe and dry!</p>
         <div className="buttons">
-          <Link to="/booking2">
+          <Link to="/exterior_cleaning">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

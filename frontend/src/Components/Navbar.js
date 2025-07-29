@@ -65,32 +65,16 @@ function Navbar() {
           </div>
         </li>
 
-    <li>
-  <HashLink 
-    smooth 
-    to="/#about" 
-    onClick={() => setMenuOpen(false)}
-  >
-    About
-  </HashLink>
-</li>
-        <li><Link to="/booking1" onClick={() => setMenuOpen(false)}>Booking</Link></li>
+        <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
+        <li><Link to="/house_cleaning" onClick={() => setMenuOpen(false)}>Booking</Link></li>
         <li><Link to="/blogs" onClick={() => setMenuOpen(false)}>Blogs</Link></li>
-        <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-        
-<li>
-  <HashLink 
-    smooth 
-    to="/#faq" 
-    onClick={() => setMenuOpen(false)}
-  >
-    FAQs
-  </HashLink>
-</li>
+                <li><Link to="/faqs" onClick={() => setMenuOpen(false)}>FAQs</Link></li>
+        <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>       
+
       </ul>
 
       {/* Desktop-only login button */}
-      <Link to="/booking1" className="login-btn desktop-only">Book Now</Link>
+      <Link to="/house_cleaning" className="login-btn desktop-only">Book Now</Link>
     </nav>
   );
 }

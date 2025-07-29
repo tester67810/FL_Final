@@ -23,10 +23,10 @@ function Footer() {
           <p className="ft-list-title">Services</p>
           <ul className="ft-list-items">
             
-  <li><Link to="/booking1">Home Cleaning</Link></li>
-  <li><Link to="/booking2">Exterior Cleaning</Link></li>
-  <li><Link to="/booking3">Carpet & Upholstery Cleaning</Link></li>
-  <li><Link to="/booking4">Commercial Cleaning</Link></li>
+  <li><Link to="/house_cleaning">Home Cleaning</Link></li>
+  <li><Link to="/exterior_cleaning">Exterior Cleaning</Link></li>
+  <li><Link to="/carpet_cleaning">Carpet & Upholstery Cleaning</Link></li>
+  <li><Link to="/commercial_cleaning">Commercial Cleaning</Link></li>
 
           </ul>
         </div>

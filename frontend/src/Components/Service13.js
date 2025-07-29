@@ -64,7 +64,7 @@ function Service13() {
           <p>
             Keep your vacation rental spotless, welcoming, and ready for 5-star reviews. Ivory Standard’s vacation rental cleaning service guarantees your property always shines between guests.
           </p>
-             <Link to="/booking4"><button className="dark-btn">Get Started</button></Link>
+             <Link to="/commercial_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -198,7 +198,7 @@ function Service13() {
         <h2>LET'S DO IT!</h2>
         <p>Book your vacation rental cleaning today with Ivory Standard — 5-star reviews start with a spotless stay!</p>
         <div className="buttons">
-          <Link to="/booking4">
+          <Link to="/commercial_cleaning">
             <button className="dark-btn">Book Now</button>
           </Link>
         </div>

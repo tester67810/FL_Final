@@ -11,11 +11,12 @@ function Service1() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const faqs = [
-    {
-      question: "How do I pay?",
-      answer:
-        "We process payments securely through Stripe after your cleaning is completed. A card must be on file—even if you plan to pay in cash. We do not accept checks or wire transfers."
-    },
+  {
+  question: "How do I pay?",
+  answer:
+    "We process all payments securely through Stripe using card only, cash is not accepted. Checks are only allowed for annual plans."
+},
+
     {
       question: "Who performs the cleaning?",
       answer:
@@ -62,7 +63,7 @@ function Service1() {
           <p>
             Keep your home fresh and inviting year-round with Ivory Standard’s trusted regular cleaning services. Enjoy a spotless living space without lifting a finger.
           </p>
-          <Link to="/booking1"><button className="dark-btn">Get Started</button></Link>
+          <Link to="/house_cleaning"><button className="dark-btn">Get Started</button></Link>
         </div>
       </section>
 
@@ -192,7 +193,7 @@ function Service1() {
         <h2>LET'S DO IT!</h2>
         <p>Book your regular cleaning today with Ivory Standard—keeping your home fresh and beautiful.</p>
         <div className="buttons">
-          <Link to="/booking1"><button className="dark-btn">Book Now</button></Link>
+          <Link to="/house_cleaning"><button className="dark-btn">Book Now</button></Link>
         </div>
       </section>
     </div>
