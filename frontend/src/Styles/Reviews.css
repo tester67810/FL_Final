@@ -35,6 +35,23 @@
   color: var(--text-dark);
 }
 
+
+.testimonial-button {
+  background-color: #b07473;
+
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.testimonial-button:hover {
+  background-color: black;
+}
+
 .section__container h1::after {
   position: absolute;
   content: "";

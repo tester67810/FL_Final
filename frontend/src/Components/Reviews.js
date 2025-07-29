@@ -14,7 +14,6 @@ const testimonials = [
     userImage: user1,
     name: "Emma Johnson",
     position: "Homeowner, Bengaluru",
-
   },
   {
     quoteTitle: "Reliable & Trustworthy",
@@ -49,8 +48,21 @@ function Testimonial() {
             <p>{item.quoteText}</p>
             <img src={item.userImage} alt={`User ${index + 1}`} />
             <h5>{item.name}</h5>
-                    </div>
+            {/* <p className="testimonial__position">{item.position}</p> */}
+          </div>
         ))}
+      </div>
+
+      {/* Add Testimonial Button */}
+      <div style={{ textAlign: "center", marginTop: "3rem" }}>
+        <a
+          href="https://forms.gle/ugs7jVDHDuj8Cdj56"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="testimonial-button"
+        >
+          Share Your Experience
+        </a>
       </div>
     </section>
   );
