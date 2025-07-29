@@ -40,6 +40,7 @@ function Navbar() {
               <Link to="/move-out-and-move-in">Move Out & Move In</Link>
               <Link to="/deep-cleaning">Deep Cleaning</Link>
               <Link to="/post-construction">Post Construction</Link>
+               <Link to="/carpet-and-upholstery">Carpet & Upholstery</Link>
             </div>
             <div className="dropdown-column">
               <h4>Exterior Cleaning</h4>
@@ -50,8 +51,8 @@ function Navbar() {
             </div>
             <div className="dropdown-column">
             <h4>
-                <Link to="/carpet-and-upholstery" style={{ color: 'white', fontWeight: 800 , fontSize: 16 }}>
-                  Carpet & Upholstery
+                <Link to="/mold-remediation" style={{ color: 'white', fontWeight: 800 , fontSize: 16 }}>
+                  Mold Remediation
                 </Link>
             </h4> 
             </div>

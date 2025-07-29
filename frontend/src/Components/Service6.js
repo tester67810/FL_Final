@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Styles/Service5.css";
-import i1 from "../Assets/gutter2.png";
-import i2 from "../Assets/gutter3.png";
+import i1 from "../Assets/before1.jpg";
+import i2 from "../Assets/before2.jpg";
 import heroBg from "../Assets/gutter1.jpg";
 import quoteBg from "../Assets/sofa.jpg";
 import finalCtaBg from "../Assets/roofglass.webp";

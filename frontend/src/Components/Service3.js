@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Styles/Service5.css"; // Reuse same CSS if shared
-import i1 from "../Assets/deep2.jpg";
-import i2 from "../Assets/deep3.jpg";
+import i1 from "../Assets/deep01.webp";
+import i2 from "../Assets/deep02.webp";
 import heroBg from "../Assets/deep1.jpg";
 import quoteBg from "../Assets/sofa.jpg";
 import finalCtaBg from "../Assets/roofglass.webp";

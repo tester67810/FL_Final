@@ -22,6 +22,7 @@ import Service10Page from "./Pages/Service10Page";
 import Service11Page from "./Pages/Service11Page";
 import Service12Page from "./Pages/Service12Page";
 import Service13Page from "./Pages/Service13Page";
+import Service14Page from "./Pages/Service14Page";
 import Blogs from "./Components/Blogs"
 
 
@@ -68,6 +69,7 @@ function App() {
           <Route path="/corporate-office" element={<Service11Page />} />
           <Route path="/retail-space" element={<Service12Page />} />
           <Route path="/vrbo-and-airbnb" element={<Service13Page />} />
+             <Route path="/mold-remediation" element={<Service14Page />} />
     <Route path="/blog/:id" element={<SinglePost />} />
           <Route path="/house_cleaning" element={<Booking />} />
           <Route path="/exterior_cleaning" element={<Booking2 />} />
