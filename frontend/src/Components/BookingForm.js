@@ -479,7 +479,7 @@ function BookingForm() {
           <div className="form-row">
             <input
               type="text"
-              placeholder="Enter coupon (SAVE10, FLAT5)"
+              placeholder="Enter Coupon Code"
               value={formState.couponCode}
               onChange={(e) => handleChange("couponCode", e.target.value)}
             />

@@ -343,7 +343,7 @@ return (
   <h3>Coupon Code</h3>
   <input
     type="text"
-    placeholder="Enter coupon code"
+    placeholder="Enter Coupon Code"
     value={couponCode}
     onChange={(e) => setCouponCode(e.target.value)}
     className="coupon-input3"
