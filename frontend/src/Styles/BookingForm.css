@@ -186,7 +186,7 @@ textarea {
 }
 
 .submit-btn:hover {
-  background: #a16260;
+  background: black;
 }
 
 /* ========== SIDEBAR ========== */
@@ -304,4 +304,7 @@ textarea {
   padding: 6px 16px;
   border-radius: 10%;
   border: 1px solid #bdbbbb;
+}
+.c-button:hover{
+    background-color: #ffdede;
 }
