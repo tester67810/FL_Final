@@ -59,7 +59,7 @@ function BookingForm() {
     notes: "",
     hours: 0,
     minutes: 0,
-    couponCode: "",
+    coupon: "",
     discount: 0,
   });
 
@@ -103,7 +103,7 @@ function BookingForm() {
   };
 
   const applyCoupon = () => {
-    const code = formState.couponCode.trim().toLowerCase();
+    const code = formState.coupon.trim().toLowerCase();
     let discount = 0;
     if (code === "save10") discount = 10;
     else if (code === "save20") discount = 20;
@@ -480,8 +480,8 @@ function BookingForm() {
             <input
               type="text"
               placeholder="Enter Coupon Code"
-              value={formState.couponCode}
-              onChange={(e) => handleChange("couponCode", e.target.value)}
+              value={formState.coupon}
+              onChange={(e) => handleChange("coupon", e.target.value)}
             />
             <button className="c-button" onClick={applyCoupon}>Apply</button>
           </div>
