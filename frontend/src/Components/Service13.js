@@ -62,9 +62,9 @@ function Service13() {
           <h1>VRBO & Airbnb Cleaning</h1>
           <h2>Turnover-Ready & Guest-Approved</h2>
           <p>
-            Keep your vacation rental spotless, welcoming, and ready for 5-star reviews. Ivory Standard’s vacation rental cleaning service guarantees your property always shines between guests.
+            Keep your vacation rental welcoming and ready for 5-star reviews. Ivory Standard’s vacation rental cleaning service guarantees your property always shines between guests.
           </p>
-             <Link to="/commercial_cleaning"><button className="dark-btn">Get Started</button></Link>
+            <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
         </div>
       </section>
 
@@ -124,7 +124,8 @@ function Service13() {
       </section>
 
       {/* Quote Section */}
-      {/* <section
+      <section
+      id="quote"
         className="quote-section"
         style={{
           backgroundImage: `url(${quoteBg})`,
@@ -161,7 +162,7 @@ function Service13() {
             <button className="green-btn1">SUBMIT</button>
           </form>
         </div>
-      </section> */}
+      </section>
 
       {/* FAQ Section */}
       <section className="faq-section">
@@ -198,9 +199,9 @@ function Service13() {
         <h2>LET'S DO IT!</h2>
         <p>Book your vacation rental cleaning today with Ivory Standard — 5-star reviews start with a spotless stay!</p>
         <div className="buttons">
-          <Link to="/commercial_cleaning">
-            <button className="dark-btn">Book Now</button>
-          </Link>
+         <a href="#quote">
+            <button className="dark-btn">Request a Quote</button>
+          </a>
         </div>
       </section>
     </div>
@@ -209,11 +210,3 @@ function Service13() {
 
 export default Service13;
 
-/*
-1. believe you are already there 
-2. god chill zone you are there for me, things will fall into place, balance both world
-3. health career relation wealth
-4. feeling, thoughts, belief, action
-5. frequency just match it, radio 
-
-*/

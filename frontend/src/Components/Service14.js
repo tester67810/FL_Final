@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "../Styles/Service5.css";
-import i1 from "../Assets/mold2.jpg"; // You can replace this with your actual mold-related image
+import i1 from "../Assets/mold2.jpg";
 import i2 from "../Assets/mold3.jpg";
 import heroBg from "../Assets/mold1.jpg";
+import quoteBg from "../Assets/sofa.jpg";
 import finalCtaBg from "../Assets/roofglass.webp";
 import { Link } from "react-router-dom";
 
@@ -46,9 +47,7 @@ function Service14() {
       {/* Hero Section */}
       <section
         className="hero-section"
-        style={{
-          backgroundImage: `url(${heroBg})`
-        }}
+        style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="overlay-content">
           <h1>Mold Remediation</h1>
@@ -56,8 +55,8 @@ function Service14() {
           <p>
             Eliminate mold safely and effectively with Ivory Standard’s professional remediation service. Inspections are scheduled via phone only.
           </p>
-          <a href="tel:+1-123-456-7890">
-            <button className="dark-btn">Call to Schedule Inspection</button>
+          <a href="#quote">
+            <button className="dark-btn">Request a Quote</button>
           </a>
         </div>
       </section>
@@ -117,6 +116,47 @@ function Service14() {
         </ul>
       </section>
 
+      {/* Quote Section */}
+      <section
+        id="quote"
+        className="quote-section"
+        style={{
+          backgroundImage: `url(${quoteBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}
+      >
+        <div className="quote-overlay"></div>
+        <div className="quote-form">
+          <form>
+            <h2 className="form-heading">Request Your Free Quote Now</h2>
+            <br />
+            <div className="form-row">
+              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Property Type" />
+            </div>
+            <div className="form-row">
+              <input type="tel" placeholder="Phone" />
+              <input type="email" placeholder="Email" />
+            </div>
+            <div className="form-row">
+              <input type="text" placeholder="Address" />
+              <input type="text" placeholder="Problem Area (e.g., Basement)" />
+            </div>
+            <div className="form-row2">
+              <input type="text" placeholder="Preferred Inspection Date" />
+              <input type="text" placeholder="Additional Notes" />
+            </div>
+            <div className="checkbox-container">
+              <input type="checkbox" id="terms" />
+              <label htmlFor="terms">Agree to terms and updates</label>
+            </div>
+
+            <button className="green-btn1">SUBMIT</button>
+          </form>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="faq-section">
         <div className="faq-header">
@@ -143,7 +183,9 @@ function Service14() {
       <section
         className="final-cta"
         style={{
-          backgroundImage: `url(${finalCtaBg})`
+          backgroundImage: `url(${finalCtaBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center"
         }}
       >
         <h2>SCHEDULE YOUR INSPECTION</h2>
@@ -151,8 +193,8 @@ function Service14() {
           Mold remediation is a serious matter—let the professionals at Ivory Standard handle it the right way.
         </p>
         <div className="buttons">
-          <a href="tel:+1-123-456-7890">
-            <button className="dark-btn">Call Now</button>
+          <a href="#quote">
+            <button className="dark-btn">Request a Quote</button>
           </a>
         </div>
       </section>

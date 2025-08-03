@@ -14,33 +14,33 @@ function Service5() {
     {
       question: "How do I pay?",
       answer:
-        "We process payments securely through Stripe after your cleaning is completed. A card must be on file—even if you plan to pay in cash. We do not accept checks or wire transfers."
+        "We process payments securely through Stripe after your cleaning is completed. A card must be on file—even if you plan to pay in cash. We do not accept checks or wire transfers.",
     },
     {
       question: "Who performs the roof cleaning?",
       answer:
-        "Our professionally trained team members at Ivory Standard are background-checked and specialize in safe, non-invasive soft wash roof cleaning techniques."
+        "Our professionally trained team members at Ivory Standard are background-checked and specialize in safe, non-invasive soft wash roof cleaning techniques.",
     },
     {
       question: "How much does roof cleaning cost?",
       answer:
-        "Every roof is different. Pricing depends on size, material, and current condition. Contact us anytime for a free, no-obligation quote."
+        "Every roof is different. Pricing depends on size, material, and current condition. Contact us anytime for a free, no-obligation quote.",
     },
     {
       question: "Do I need to be home for the cleaning?",
       answer:
-        "No. As long as we have safe access to your roof and an external water source, you don't need to be present."
+        "No. As long as we have safe access to your roof and an external water source, you don't need to be present.",
     },
     {
       question: "What time does the team arrive?",
       answer:
-        "You’ll receive a 2-hour arrival window along with a text notification before our crew is en route."
+        "You’ll receive a 2-hour arrival window along with a text notification before our crew is en route.",
     },
     {
       question: "What don’t you clean?",
       answer:
-        "We avoid roofs with any structural damage, areas requiring mold remediation, or hazardous material exposure."
-    }
+        "We avoid roofs with any structural damage, areas requiring mold remediation, or hazardous material exposure.",
+    },
   ];
 
   const toggleFAQ = (index) => {
@@ -55,16 +55,20 @@ function Service5() {
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       >
         <div className="overlay-content">
           <h1>Roof Cleaning</h1>
           <h2>Gentle & Trusted by Professionals</h2>
           <p>
-            At Ivory Standard, our soft wash roof cleaning helps extend your roof's life and enhances curb appeal. We eliminate harmful moss, algae, and debris—safely and efficiently.
+            At Ivory Standard, our soft wash roof cleaning helps extend your
+            roof's life and enhances curb appeal. We eliminate harmful moss,
+            algae, and debris—safely and efficiently.
           </p>
-        <Link to="/exterior_cleaning"><button className="dark-btn">Get Started</button></Link>
+            {/* <button className="dark-btn">Get Started</button> */}
+               <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
+          
         </div>
       </section>
 
@@ -76,11 +80,16 @@ function Service5() {
             <h2 className="heading01">Our Roof Cleaning Service</h2>
             <br />
             <p className="para01">
-              Ivory Standard’s roof cleaning service thoroughly removes moss, algae, and surface staining—restoring your roof’s natural beauty. 
+              Ivory Standard’s roof cleaning service thoroughly removes moss,
+              algae, and surface staining—restoring your roof’s natural beauty.
             </p>
             <br />
             <p className="para01">
-              We rely on eco-friendly treatments and modern steam-based techniques that are both safe and long-lasting. Whether it's a historic home or a modern flat roof, our experienced cleaners handle each property with the care and professionalism you deserve.
+              We rely on eco-friendly treatments and modern steam-based
+              techniques that are both safe and long-lasting. Whether it's a
+              historic home or a modern flat roof, our experienced cleaners
+              handle each property with the care and professionalism you
+              deserve.
             </p>
             <br />
           </div>
@@ -101,7 +110,11 @@ function Service5() {
             <h2 className="heading01"> Why Choose Us for Roof Cleaning?</h2>
             <br />
             <p className="para02">
-              At Ivory Standard, we blend modern cleaning science with hands-on experience. Every roof receives a customized cleaning approach that suits its specific condition and material. Our technicians work meticulously to remove all buildup, ensuring lasting results and a like-new finish.
+              At Ivory Standard, we blend modern cleaning science with hands-on
+              experience. Every roof receives a customized cleaning approach
+              that suits its specific condition and material. Our technicians
+              work meticulously to remove all buildup, ensuring lasting results
+              and a like-new finish.
             </p>
             <br />
           </div>
@@ -124,12 +137,13 @@ function Service5() {
       </section>
 
       {/* Quote Section */}
-      {/* <section
+      <section
+          id="quote"
         className="quote-section"
         style={{
           backgroundImage: `url(${quoteBg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       >
         <div className="quote-overlay"></div>
@@ -138,7 +152,7 @@ function Service5() {
             <h2 className="form-heading">Request Your Free Quote Now</h2>
             <br />
             <div className="form-row">
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="First Name" />
               <input type="text" placeholder="Last Name" />
             </div>
             <div className="form-row">
@@ -158,15 +172,14 @@ function Service5() {
               <label htmlFor="terms">Agree to terms and updates</label>
             </div>
 
-            <button className="green-btn1">SUBMIT</button>
+            <button className="green-btn1" type="submit">SUBMIT</button>
           </form>
         </div>
-      </section> */}
+      </section>
 
       {/* FAQ Section */}
       <section className="faq-section">
         <div className="faq-header">
-         
           <h2>Common Questions</h2>
         </div>
         <div className="faq-list">
@@ -178,7 +191,9 @@ function Service5() {
             >
               <div className="faq-question">
                 {faq.question}
-                <span className="faq-arrow">{activeIndex === index ? "▲" : "▼"}</span>
+                <span className="faq-arrow">
+                  {activeIndex === index ? "▲" : "▼"}
+                </span>
               </div>
               <div className="faq-answer">{faq.answer}</div>
             </div>
@@ -192,15 +207,15 @@ function Service5() {
         style={{
           backgroundImage: `url(${finalCtaBg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       >
         <h2>LET'S DO IT!</h2>
-        <p>Book your roof cleaning today with Ivory Standard—where quality always comes first.</p>
+        <p>
+          Get your free quote for roof cleaning from Ivory Standard — keep your home safe and dry!
+        </p>
         <div className="buttons">
-          <Link to="/exterior_cleaning">
-            <button className="dark-btn">Book Now</button>
-          </Link>
+          <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
         </div>
       </section>
     </div>

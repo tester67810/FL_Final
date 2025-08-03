@@ -64,7 +64,7 @@ function Service11() {
           <p>
             Keep your workplace spotless and inviting with Ivory Standard’s professional corporate office cleaning — customized to fit your team’s needs and schedule.
           </p>
-            <Link to="/commercial_cleaning"><button className="dark-btn">Get Started</button></Link>
+         <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
         </div>
       </section>
 
@@ -124,7 +124,8 @@ function Service11() {
       </section>
 
       {/* Quote Section */}
-      {/* <section
+      <section
+      id="quote"
         className="quote-section"
         style={{
           backgroundImage: `url(${quoteBg})`,
@@ -161,7 +162,7 @@ function Service11() {
             <button className="green-btn1">SUBMIT</button>
           </form>
         </div>
-      </section> */}
+      </section>
 
       {/* FAQ Section */}
       <section className="faq-section">
@@ -198,9 +199,9 @@ function Service11() {
         <h2>LET'S DO IT!</h2>
         <p>Book your corporate office cleaning with Ivory Standard — and keep your workspace fresh and inspiring.</p>
         <div className="buttons">
-          <Link to="/commercial_cleaning">
-            <button className="dark-btn">Book Now</button>
-          </Link>
+         <a href="#quote">
+            <button className="dark-btn">Request a Quote</button>
+          </a>
         </div>
       </section>
     </div>

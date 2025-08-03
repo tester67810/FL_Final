@@ -14,33 +14,33 @@ function Service7() {
     {
       question: "How do I pay?",
       answer:
-        "We process payments securely through Stripe after your house washing is completed. A card must be on file—even if you plan to pay in cash. We do not accept checks or wire transfers."
+        "We process payments securely through Stripe after your house washing is completed. A card must be on file—even if you plan to pay in cash. We do not accept checks or wire transfers.",
     },
     {
       question: "Who performs the house washing?",
       answer:
-        "Our professionally trained team members at Ivory Standard are background-checked and specialize in soft wash house washing techniques for all exterior types."
+        "Our professionally trained team members at Ivory Standard are background-checked and specialize in soft wash house washing techniques for all exterior types.",
     },
     {
       question: "How much does house washing cost?",
       answer:
-        "Pricing depends on the size of your home, exterior material, and level of buildup. Contact us anytime for a free, no-obligation quote."
+        "Pricing depends on the size of your home, exterior material, and level of buildup. Contact us anytime for a free, no-obligation quote.",
     },
     {
       question: "Do I need to be home during the wash?",
       answer:
-        "No. As long as we have safe access to your exterior and an outdoor water source, you don’t need to be present."
+        "No. As long as we have safe access to your exterior and an outdoor water source, you don’t need to be present.",
     },
     {
       question: "What time does the team arrive?",
       answer:
-        "You’ll receive a 2-hour arrival window and a text notification when our crew is on the way."
+        "You’ll receive a 2-hour arrival window and a text notification when our crew is on the way.",
     },
     {
       question: "What’s included in house washing?",
       answer:
-        "Our service includes a low-pressure soft wash to remove dirt, algae, mildew, and grime from siding, trim, soffits, and exterior surfaces without damaging paint or materials."
-    }
+        "Our service includes a low-pressure soft wash to remove dirt, algae, mildew, and grime from siding, trim, soffits, and exterior surfaces without damaging paint or materials.",
+    },
   ];
 
   const toggleFAQ = (index) => {
@@ -55,7 +55,7 @@ function Service7() {
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       >
         <div className="overlay-content">
@@ -64,7 +64,7 @@ function Service7() {
           <p>
             Ivory Standard’s house washing restores your home’s exterior to its best. We safely remove dirt, mold, and grime with our proven soft wash methods — protecting paint and siding.
           </p>
-           <Link to="/exterior_cleaning"><button className="dark-btn">Get Started</button></Link>
+            <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
         </div>
       </section>
 
@@ -74,15 +74,12 @@ function Service7() {
           <img src={i1} alt="House Washing" />
           <div className="benefits-text">
             <h2 className="heading01">Our House Washing Service</h2>
-            <br />
             <p className="para01">
               Over time, your home’s exterior can collect mold, mildew, algae, and dirt. Our soft wash process gently lifts away buildup without high pressure that can damage siding.
             </p>
-            <br />
             <p className="para01">
               We use safe, eco-friendly solutions to clean vinyl, brick, stucco, and painted surfaces. The result? A refreshed, bright exterior that boosts curb appeal and extends the life of your home’s finish.
             </p>
-            <br />
           </div>
         </div>
       </section>
@@ -99,21 +96,18 @@ function Service7() {
         <div className="about-content">
           <div>
             <h2 className="heading01">Why Choose Us for House Washing?</h2>
-            <br />
             <p className="para02">
               Ivory Standard’s trusted professionals combine gentle techniques with attention to detail. We protect your siding and paint while delivering dramatic results that last — giving you peace of mind and a home that looks new again.
             </p>
-            <br />
           </div>
           <img src={i2} alt="About House Washing" />
         </div>
       </section>
 
-      {/* Services List */}
+      {/* Included Services */}
       <section className="roof-services-section">
         <h1>What’s Included in House Washing</h1>
         <p className="subheading">Gentle Exterior Renewal</p>
-
         <ul className="roof-services-list">
           <li>Low-Pressure Soft Wash</li>
           <li>Safe Mold & Mildew Removal</li>
@@ -124,49 +118,48 @@ function Service7() {
       </section>
 
       {/* Quote Section */}
-      {/* <section
+      <section
+        id="quote"
         className="quote-section"
         style={{
           backgroundImage: `url(${quoteBg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       >
         <div className="quote-overlay"></div>
         <div className="quote-form">
           <form>
-            <h2 className="form-heading">Request Your Free Quote Now</h2>
-            <br />
+            <h2 className="form-heading">Request Your Free Quote</h2>
+            <br/>
             <div className="form-row">
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Last Name" />
+              <input type="text" placeholder="First Name" required />
+              <input type="text" placeholder="Last Name" required />
             </div>
             <div className="form-row">
-              <input type="tel" placeholder="Phone" />
-              <input type="email" placeholder="Email" />
+              <input type="tel" placeholder="Phone Number" required />
+              <input type="email" placeholder="Email Address" required />
             </div>
             <div className="form-row">
               <input type="text" placeholder="Zip Code" />
-              <input type="text" placeholder="Square Footage" />
+              <input type="text" placeholder="Approx. Square Footage" />
             </div>
             <div className="form-row2">
               <input type="text" placeholder="Desired Services" />
               <input type="text" placeholder="How did you hear about us?" />
             </div>
             <div className="checkbox-container">
-              <input type="checkbox" id="terms" />
-              <label htmlFor="terms">Agree to terms and updates</label>
+              <input type="checkbox" id="terms" required />
+              <label htmlFor="terms">I agree to receive updates and quotes.</label>
             </div>
-
-            <button className="green-btn1">SUBMIT</button>
+            <button className="green-btn1" type="submit">Submit</button>
           </form>
         </div>
-      </section> */}
+      </section>
 
       {/* FAQ Section */}
       <section className="faq-section">
         <div className="faq-header">
-        
           <h2>Common Questions</h2>
         </div>
         <div className="faq-list">
@@ -178,7 +171,9 @@ function Service7() {
             >
               <div className="faq-question">
                 {faq.question}
-                <span className="faq-arrow">{activeIndex === index ? "▲" : "▼"}</span>
+                <span className="faq-arrow">
+                  {activeIndex === index ? "▲" : "▼"}
+                </span>
               </div>
               <div className="faq-answer">{faq.answer}</div>
             </div>
@@ -192,15 +187,13 @@ function Service7() {
         style={{
           backgroundImage: `url(${finalCtaBg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       >
         <h2>LET'S DO IT!</h2>
         <p>Book your house washing with Ivory Standard — restore your home’s curb appeal today!</p>
         <div className="buttons">
-          <Link to="/exterior_cleaning">
-            <button className="dark-btn">Book Now</button>
-          </Link>
+              <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
         </div>
       </section>
     </div>

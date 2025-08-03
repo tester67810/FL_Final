@@ -62,9 +62,9 @@ function Service8() {
           <h1>Pressure Washing</h1>
           <h2>Revive & Renew Outdoor Spaces</h2>
           <p>
-            Ivory Standard’s professional pressure washing removes dirt, grime, algae, and stains from driveways, decks, patios, and more — restoring your outdoor surfaces safely and effectively.
+            Ivory Standard’s professional pressure washing removes dirt, grime, algae, and stains from driveways, decks, patios, and more — restoring your outdoor surfaces safely.
           </p>
-         <Link to="/exterior_cleaning"><button className="dark-btn">Get Started</button></Link>
+          <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
         </div>
       </section>
 
@@ -74,15 +74,12 @@ function Service8() {
           <img src={i1} alt="Pressure Washing" />
           <div className="benefits-text">
             <h2 className="heading01">Our Pressure Washing Service</h2>
-            <br />
             <p className="para01">
               Outdoor surfaces endure constant exposure to the elements. Dirt, mildew, and algae build up over time — diminishing curb appeal and even creating slip hazards.
             </p>
-            <br />
             <p className="para01">
               Ivory Standard’s pressure washing service safely blasts away grime, revealing fresh, clean surfaces. We tailor our pressure levels and cleaning solutions for every surface to protect finishes and extend lifespan.
             </p>
-            <br />
           </div>
         </div>
       </section>
@@ -99,11 +96,9 @@ function Service8() {
         <div className="about-content">
           <div>
             <h2 className="heading01">Why Choose Us for Pressure Washing?</h2>
-            <br />
             <p className="para02">
               We understand the balance between power and care. Our team uses the right techniques to lift away years of buildup without damaging your concrete, wood, or siding — leaving your outdoor spaces fresh and renewed.
             </p>
-            <br />
           </div>
           <img src={i2} alt="About Pressure Washing" />
         </div>
@@ -124,7 +119,8 @@ function Service8() {
       </section>
 
       {/* Quote Section */}
-      {/* <section
+      <section
+        id="quote"
         className="quote-section"
         style={{
           backgroundImage: `url(${quoteBg})`,
@@ -135,38 +131,36 @@ function Service8() {
         <div className="quote-overlay"></div>
         <div className="quote-form">
           <form>
-            <h2 className="form-heading">Request Your Free Quote Now</h2>
+            <h2 className="form-heading">Request Your Free Quote</h2>
             <br />
             <div className="form-row">
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Last Name" />
+              <input type="text" placeholder="First Name" required />
+              <input type="text" placeholder="Last Name" required />
             </div>
             <div className="form-row">
-              <input type="tel" placeholder="Phone" />
-              <input type="email" placeholder="Email" />
+              <input type="tel" placeholder="Phone Number" required />
+              <input type="email" placeholder="Email Address" required />
             </div>
             <div className="form-row">
               <input type="text" placeholder="Zip Code" />
-              <input type="text" placeholder="Square Footage" />
+              <input type="text" placeholder="Approx. Square Footage" />
             </div>
             <div className="form-row2">
               <input type="text" placeholder="Desired Services" />
               <input type="text" placeholder="How did you hear about us?" />
             </div>
             <div className="checkbox-container">
-              <input type="checkbox" id="terms" />
-              <label htmlFor="terms">Agree to terms and updates</label>
+              <input type="checkbox" id="terms" required />
+              <label htmlFor="terms">I agree to receive updates and quotes.</label>
             </div>
-
-            <button className="green-btn1">SUBMIT</button>
+            <button className="green-btn1" type="submit">Submit</button>
           </form>
         </div>
-      </section> */}
+      </section>
 
       {/* FAQ Section */}
       <section className="faq-section">
         <div className="faq-header">
-     
           <h2>Common Questions</h2>
         </div>
         <div className="faq-list">
@@ -198,9 +192,9 @@ function Service8() {
         <h2>LET'S DO IT!</h2>
         <p>Book your pressure washing today with Ivory Standard — bring your outdoor surfaces back to life!</p>
         <div className="buttons">
-          <Link to="/exterior_cleaning">
-            <button className="dark-btn">Book Now</button>
-          </Link>
+          <a href="#quote">
+            <button className="dark-btn">Request a Quote</button>
+          </a>
         </div>
       </section>
     </div>

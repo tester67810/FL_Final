@@ -64,7 +64,7 @@ function Service12() {
           <p>
             Keep your retail store sparkling clean, welcoming, and safe for every customer. Ivory Standard’s professional retail cleaning keeps your shop ready for business every day.
           </p>
-        <Link to="/commercial_cleaning"><button className="dark-btn">Get Started</button></Link>
+    <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
         </div>
       </section>
 
@@ -124,7 +124,8 @@ function Service12() {
       </section>
 
       {/* Quote Section */}
-      {/* <section
+      <section
+      id = "quote"
         className="quote-section"
         style={{
           backgroundImage: `url(${quoteBg})`,
@@ -161,7 +162,7 @@ function Service12() {
             <button className="green-btn1">SUBMIT</button>
           </form>
         </div>
-      </section> */}
+      </section>
 
       {/* FAQ Section */}
       <section className="faq-section">
@@ -198,9 +199,9 @@ function Service12() {
         <h2>LET'S DO IT!</h2>
         <p>Book your retail cleaning today with Ivory Standard — your store deserves to shine every day.</p>
         <div className="buttons">
-          <Link to="/commercial_cleaning">
-            <button className="dark-btn">Book Now</button>
-          </Link>
+           <a href="#quote">
+            <button className="dark-btn">Request a Quote</button>
+          </a>
         </div>
       </section>
     </div>

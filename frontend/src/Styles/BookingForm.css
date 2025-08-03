@@ -300,3 +300,8 @@ textarea {
     padding: 12px;
   }
 }
+.c-button{
+  padding: 6px 16px;
+  border-radius: 10%;
+  border: 1px solid #bdbbbb;
+}

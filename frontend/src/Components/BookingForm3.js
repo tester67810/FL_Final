@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import "../Styles/BookingForm3.css";
 import { supabase } from "../supabaseClient";
@@ -5,7 +6,12 @@ import { loadStripe } from "@stripe/stripe-js";
 
 function BookingForm3() {
   const [selectedFrequency, setSelectedFrequency] = useState("");
-  const [selectedExtras, setSelectedExtras] = useState([]);
+ const [selectedExtras, setSelectedExtras] = useState({});
+ const [couponCode, setCouponCode] = useState("");
+const [discountPercent, setDiscountPercent] = useState(0);
+const [couponError, setCouponError] = useState("");
+
+
   const [selectedKeyInfo, setSelectedKeyInfo] = useState("");
   const [selectedRooms, setSelectedRooms] = useState(0);
   const [selectedStairs, setSelectedStairs] = useState(0);
@@ -65,14 +71,66 @@ function BookingForm3() {
     "Other (Leave the Instruction on the Notes)",
   ];
 
-  const calculateTotal = () => {
-    const baseCost = 40;
-    const roomsCost = selectedRooms * 10;
-    const stairsCost = selectedStairs * 10;
-    const extrasCost = selectedExtras.length * 10;
-    const frequencyCost = selectedFrequency ? 10 : 0;
-    return baseCost + roomsCost + stairsCost + extrasCost + frequencyCost;
+const calculateTotal = () => {
+  const frequency = selectedFrequency;
+
+  const extrasPrices = {
+    "Pet, Food, Drink Stain": {
+      "One-Time": 25.78,
+      "Every 6 Months": 23.2,
+      "Every 3 Months": 21.91,
+    },
+    "HAZARD": {
+      "One-Time": 41.24,
+      "Every 6 Months": 37.12,
+      "Every 3 Months": 35.05,
+    },
+    "WINE STAIN REMOVAL": {
+      "One-Time": 41.24,
+      "Every 6 Months": 37.12,
+      "Every 3 Months": 35.05,
+    },
+    "HALLWAYS": {
+      "One-Time": 8.25,
+      "Every 6 Months": 7.42,
+      "Every 3 Months": 7.01,
+    },
   };
+
+  const roomAndStairPrices = {
+    "One-Time": 52,
+    "Every 6 Months": 47,
+    "Every 3 Months": 44,
+  };
+
+  const getPrice = (item) => {
+    if (extrasPrices[item] && frequency) {
+      return extrasPrices[item][frequency] || 0;
+    }
+    return 0;
+  };
+
+  const extrasCost = Object.entries(selectedExtras).reduce((total, [label, qty]) => {
+    const price = getPrice(label);
+    return total + price * qty;
+  }, 0);
+
+  const roomPrice = roomAndStairPrices[frequency] || 0;
+  const totalRoomsCost = selectedRooms * roomPrice;
+  const totalStairsCost = selectedStairs * roomPrice;
+
+  let total = totalRoomsCost + totalStairsCost + extrasCost;
+
+  // ✅ Apply discount if any
+  if (discountPercent > 0) {
+    const discountAmount = (total * discountPercent) / 100;
+    total -= discountAmount;
+  }
+
+  return Number(total.toFixed(2));
+};
+
+
 
   const handleSubmit = async () => {
     // ✅ Email validation
@@ -204,22 +262,36 @@ return (
           <h3>Select Extras</h3>
           <p>If you have extras, you can set them up here if required.</p>
           <div className="extra-options3">
-            {extrasOptions.map((label) => (
-              <div
-                key={label}
-                className={`extra-box3 ${selectedExtras.includes(label) ? "selected3" : ""}`}
-                onClick={() =>
-                  setSelectedExtras((prev) =>
-                    prev.includes(label)
-                      ? prev.filter((item) => item !== label)
-                      : [...prev, label]
-                  )
-                }
-              >
-                {label}
-              </div>
-            ))}
-          </div>
+  {extrasOptions.map((label) => (
+    <div key={label} className="extra-box3">
+      <span>{label}</span>
+      <div className="qty-controls">
+        <button
+          onClick={() =>
+            setSelectedExtras((prev) => ({
+              ...prev,
+              [label]: Math.max((prev[label] || 0) - 1, 0),
+            }))
+          }
+        >
+          −
+        </button>
+        <span>{selectedExtras[label] || 0}</span>
+        <button
+          onClick={() =>
+            setSelectedExtras((prev) => ({
+              ...prev,
+              [label]: (prev[label] || 0) + 1,
+            }))
+          }
+        >
+          +
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
+
         </div>
 
         <div className="section3">
@@ -267,6 +339,42 @@ return (
             onChange={(e) => setSpecialNotes(e.target.value)}
           />
         </div>
+        <div className="section3">
+  <h3>Coupon Code</h3>
+  <input
+    type="text"
+    placeholder="Enter coupon code"
+    value={couponCode}
+    onChange={(e) => setCouponCode(e.target.value)}
+    className="coupon-input3"
+  />
+  <button
+    className="a3"
+    onClick={() => {
+      const code = couponCode.trim().toLowerCase();
+      // Replace with your actual codes
+      if (code === "save10") {
+        setDiscountPercent(10);
+        setCouponError("");
+      } else if (code === "save20") {
+        setDiscountPercent(20);
+        setCouponError("");
+      } else {
+        setDiscountPercent(0);
+        setCouponError("Invalid coupon code");
+      }
+    }}
+  >
+    Apply
+  </button>
+  {couponError && <p style={{ color: "red" }}>{couponError}</p>}
+  {discountPercent > 0 && (
+    <p style={{ color: "green" }}>
+   
+    </p>
+  )}
+</div>
+
 
         <button className="submit-button3" onClick={handleSubmit}>
           Confirm & Pay
@@ -280,7 +388,23 @@ return (
           <li><strong>Frequency:</strong> {selectedFrequency || "Not selected"}</li>
           <li><strong>Rooms:</strong> {selectedRooms}</li>
           <li><strong>Staircases:</strong> {selectedStairs}</li>
-          <li><strong>Extras:</strong> {selectedExtras.join(", ") || "None"}</li>
+       <li>
+  <strong>Extras:</strong>{" "}
+  {Object.entries(selectedExtras).length === 0
+    ? "None"
+    : Object.entries(selectedExtras)
+        .filter(([_, qty]) => qty > 0)
+        .map(([label, qty]) => `${label} × ${qty}`)
+        .join(", ")}
+</li>
+
+
+<li>
+  <strong>Discount:</strong>{" "}
+  {discountPercent > 0 ? `-${discountPercent}%` : "None"}
+</li>
+
+
           <li><strong>Total:</strong> <span style={{ color: "red" }}>${calculateTotal()}</span></li>
         </div>
 
@@ -341,7 +465,3 @@ return (
 }
 
 export default BookingForm3;
-
-
-
-

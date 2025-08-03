@@ -8,6 +8,29 @@
   box-sizing: border-box;
 }
 
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.qty-controls button {
+  padding: 2px 18px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: auto;
+}
+
+.qty-controls span {
+  min-width: 20px;
+  text-align: center;
+}
+
 .booking-form3-container3 {
   flex: 3;
   background: #fff;
@@ -254,4 +277,12 @@
   .input-group3 {
     flex-direction: column;
   }
+}
+
+
+.a3{
+  margin-top: 5px;
+    padding: 6px 16px;
+  border-radius: 10%;
+  border: 1px solid #bdbbbb;
 }

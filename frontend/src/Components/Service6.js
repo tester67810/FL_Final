@@ -14,33 +14,33 @@ function Service6() {
     {
       question: "How do I pay?",
       answer:
-        "We process payments securely through Stripe after your gutter cleaning is completed. A card must be on file—even if you plan to pay in cash. We do not accept checks or wire transfers."
+        "We process payments securely through Stripe after your gutter cleaning is completed. A card must be on file—even if you plan to pay in cash. We do not accept checks or wire transfers.",
     },
     {
       question: "Who performs the gutter cleaning?",
       answer:
-        "Our professionally trained team members at Ivory Standard are background-checked and specialize in safe, thorough gutter cleaning for all types of properties."
+        "Our professionally trained team members at Ivory Standard are background-checked and specialize in safe, thorough gutter cleaning for all types of properties.",
     },
     {
       question: "How much does gutter cleaning cost?",
       answer:
-        "Pricing depends on the size of your home, number of stories, and the current condition of your gutters. Contact us anytime for a free, no-obligation quote."
+        "Pricing depends on the size of your home, number of stories, and the current condition of your gutters. Contact us anytime for a free, no-obligation quote.",
     },
     {
       question: "Do I need to be home during the service?",
       answer:
-        "No. As long as we have safe access to your gutters and an external water source if needed, you don’t need to be present."
+        "No. As long as we have safe access to your gutters and an external water source if needed, you don’t need to be present.",
     },
     {
       question: "What time does the team arrive?",
       answer:
-        "You’ll receive a 2-hour arrival window along with a text notification before our crew is on the way."
+        "You’ll receive a 2-hour arrival window along with a text notification before our crew is on the way.",
     },
     {
       question: "What’s included in gutter cleaning?",
       answer:
-        "Our service includes removal of leaves and debris, flushing downspouts to ensure proper drainage, and a final inspection to make sure everything is clear and functional."
-    }
+        "Our service includes removal of leaves and debris, flushing downspouts to ensure proper drainage, and a final inspection to make sure everything is clear and functional.",
+    },
   ];
 
   const toggleFAQ = (index) => {
@@ -55,16 +55,18 @@ function Service6() {
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       >
         <div className="overlay-content">
           <h1>Gutter Cleaning</h1>
           <h2>Protect Your Home from Water Damage</h2>
           <p>
-            Ivory Standard’s gutter cleaning service removes debris and buildup that can cause leaks and structural damage. Keep your home safe with our reliable and thorough team.
+            Ivory Standard’s gutter cleaning service removes debris and buildup
+            that can cause leaks and structural damage. Keep your home safe with
+            our reliable and thorough team.
           </p>
-            <Link to="/exterior_cleaning"><button className="dark-btn">Get Started</button></Link>
+          <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
         </div>
       </section>
 
@@ -74,15 +76,15 @@ function Service6() {
           <img src={i1} alt="Gutter Cleaning" />
           <div className="benefits-text">
             <h2 className="heading01">Our Gutter Cleaning Service</h2>
-            <br />
             <p className="para01">
-              Blocked gutters can lead to water overflow, foundation damage, and costly repairs. Ivory Standard’s expert team clears out debris, checks downspouts, and ensures your system flows properly.
+              Blocked gutters can lead to water overflow, foundation damage,
+              and costly repairs. Ivory Standard’s expert team clears out
+              debris, checks downspouts, and ensures your system flows properly.
             </p>
-            <br />
             <p className="para01">
-              Our process is safe and efficient — no mess left behind, just clear gutters ready to protect your home. We use proven methods and proper safety equipment for every job.
+              Our process is safe and efficient — no mess left behind, just
+              clear gutters ready to protect your home.
             </p>
-            <br />
           </div>
         </div>
       </section>
@@ -99,11 +101,12 @@ function Service6() {
         <div className="about-content">
           <div>
             <h2 className="heading01">Why Choose Us for Gutter Cleaning?</h2>
-            <br />
             <p className="para02">
-              Ivory Standard’s reliable gutter cleaning keeps your home safe from water damage. With our trained, insured team, you can rest easy knowing your gutters are clear and functional season after season.
+              Ivory Standard’s reliable gutter cleaning keeps your home safe
+              from water damage. With our trained, insured team, you can rest
+              easy knowing your gutters are clear and functional season after
+              season.
             </p>
-            <br />
           </div>
           <img src={i2} alt="About Gutter Cleaning" />
         </div>
@@ -113,32 +116,31 @@ function Service6() {
       <section className="roof-services-section">
         <h1>What’s Included in Gutter Cleaning</h1>
         <p className="subheading">Clear & Protect Your Home</p>
-
         <ul className="roof-services-list">
           <li>Removal of Leaves & Debris</li>
           <li>Flushing of Downspouts</li>
           <li>Inspection for Blockages</li>
-          
           <li>Safe Cleanup & Disposal</li>
         </ul>
       </section>
 
       {/* Quote Section */}
-      {/* <section
+      <section
+        id="quote"
         className="quote-section"
         style={{
           backgroundImage: `url(${quoteBg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       >
         <div className="quote-overlay"></div>
         <div className="quote-form">
           <form>
             <h2 className="form-heading">Request Your Free Quote Now</h2>
-            <br />
+            <br/>
             <div className="form-row">
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="First Name" />
               <input type="text" placeholder="Last Name" />
             </div>
             <div className="form-row">
@@ -155,18 +157,18 @@ function Service6() {
             </div>
             <div className="checkbox-container">
               <input type="checkbox" id="terms" />
-              <label htmlFor="terms">Agree to terms and updates</label>
+              <label htmlFor="terms">
+                I agree to receive updates and communication.
+              </label>
             </div>
-
-            <button className="green-btn1">SUBMIT</button>
+            <button type="submit" className="green-btn1">SUBMIT</button>
           </form>
         </div>
-      </section> */}
+      </section>
 
       {/* FAQ Section */}
       <section className="faq-section">
         <div className="faq-header">
-     
           <h2>Common Questions</h2>
         </div>
         <div className="faq-list">
@@ -178,7 +180,9 @@ function Service6() {
             >
               <div className="faq-question">
                 {faq.question}
-                <span className="faq-arrow">{activeIndex === index ? "▲" : "▼"}</span>
+                <span className="faq-arrow">
+                  {activeIndex === index ? "▲" : "▼"}
+                </span>
               </div>
               <div className="faq-answer">{faq.answer}</div>
             </div>
@@ -192,15 +196,15 @@ function Service6() {
         style={{
           backgroundImage: `url(${finalCtaBg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       >
         <h2>LET'S DO IT!</h2>
-        <p>Book your gutter cleaning with Ivory Standard — keep your home safe and dry!</p>
+        <p>
+          Get your free quote for gutter cleaning from Ivory Standard — keep your home safe and dry!
+        </p>
         <div className="buttons">
-          <Link to="/exterior_cleaning">
-            <button className="dark-btn">Book Now</button>
-          </Link>
+          <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
         </div>
       </section>
     </div>
