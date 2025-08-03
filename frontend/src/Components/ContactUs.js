@@ -78,7 +78,7 @@ function ContactUs() {
 
             <div className="form-row">
               <div>
-                <label>Email Address</label>
+                <label style={{color: "black"}}>Email Address</label>
                 <input
                   type="email"
                   name="entry.1736458666"
@@ -89,7 +89,7 @@ function ContactUs() {
               </div>
 
               <div>
-                <label>Phone Number</label>
+                 <label style={{color: "black"}}>Phone Number</label>
                 <input
                   type="text"
                   name="entry.1855476598"
@@ -137,3 +137,5 @@ function ContactUs() {
 }
 
 export default ContactUs;
+
+

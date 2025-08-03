@@ -9,6 +9,10 @@ import { Link } from "react-router-dom";
 
 function Service8() {
   const [activeIndex, setActiveIndex] = useState(null);
+  
+    const [phone, setPhone] = useState("");
+    const [phoneError, setPhoneError] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
   const faqs = [
     {
@@ -43,8 +47,50 @@ function Service8() {
     }
   ];
 
-  const toggleFAQ = (index) => {
+   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
+  };
+
+const validatePhone = (value) => {
+    const phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(value)) {
+      setPhoneError("Please enter a valid 10-digit phone number");
+    } else {
+      setPhoneError("");
+    }
+  };
+
+  const handlePhoneChange = (e) => {
+    const value = e.target.value;
+    setPhone(value);
+    validatePhone(value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (phoneError) return;
+
+    setIsSubmitting(true);
+    const formData = new FormData(e.target);
+
+    try {
+      await fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLSdJt5bsPhh4IRkFlCMZV3VuTSbK4ADFyZqscHa65ZRwZmPhJw/formResponse",
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: formData,
+        }
+      );
+      alert("Your message has been submitted! ✅");
+      e.target.reset();
+      setPhone("");
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("There was an error submitting the form.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -120,43 +166,53 @@ function Service8() {
 
       {/* Quote Section */}
       <section
-        id="quote"
-        className="quote-section"
-        style={{
-          backgroundImage: `url(${quoteBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center"
-        }}
-      >
-        <div className="quote-overlay"></div>
-        <div className="quote-form">
-          <form>
-            <h2 className="form-heading">Request Your Free Quote</h2>
-            <br />
+                 id="quote"
+              className="quote-section"
+              style={{
+                backgroundImage: `url(${quoteBg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="quote-overlay"></div>
+              <div className="quote-form">
+                 <form onSubmit={handleSubmit}>
             <div className="form-row">
-              <input type="text" placeholder="First Name" required />
-              <input type="text" placeholder="Last Name" required />
+              <input type="text" placeholder="Name" name="entry.1009275927" required />
+              <input type="text" placeholder="Last Name" name="entry.1818453183" required />
             </div>
             <div className="form-row">
-              <input type="tel" placeholder="Phone Number" required />
-              <input type="email" placeholder="Email Address" required />
+              <input
+                type="tel"
+                placeholder="Phone"
+                name="entry.518933839"
+                value={phone}
+                onChange={handlePhoneChange}
+                required
+              />
+              <input type="email" placeholder="Email" name="entry.1421178179" required />
             </div>
+            {phoneError && (
+              <p style={{ color: "white", fontSize: "0.9rem", marginTop: "4px" }}>{phoneError}</p>
+            )}
             <div className="form-row">
-              <input type="text" placeholder="Zip Code" />
-              <input type="text" placeholder="Approx. Square Footage" />
+              <input type="text" placeholder="Zip Code" name="entry.1407045223" required />
+              <input type="text" placeholder="Square Footage" name="entry.1247129266" />
             </div>
             <div className="form-row2">
-              <input type="text" placeholder="Desired Services" />
-              <input type="text" placeholder="How did you hear about us?" />
+              <input type="text" placeholder="Desired Services" name="entry.1509664965" />
+              <input type="text" placeholder="How did you hear about us?" name="entry.1104108847" />
             </div>
             <div className="checkbox-container">
               <input type="checkbox" id="terms" required />
-              <label htmlFor="terms">I agree to receive updates and quotes.</label>
+              <label htmlFor="terms">Agree to terms and updates</label>
             </div>
-            <button className="green-btn1" type="submit">Submit</button>
+            <button type="submit" className="green-btn1" disabled={phoneError || isSubmitting}>
+              {isSubmitting ? "Submitting..." : "SUBMIT"}
+            </button>
           </form>
-        </div>
-      </section>
+              </div>
+            </section>
 
       {/* FAQ Section */}
       <section className="faq-section">

@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 
 function Service7() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const faqs = [
     {
@@ -47,6 +50,48 @@ function Service7() {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const validatePhone = (value) => {
+    const phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(value)) {
+      setPhoneError("Please enter a valid 10-digit phone number");
+    } else {
+      setPhoneError("");
+    }
+  };
+
+  const handlePhoneChange = (e) => {
+    const value = e.target.value;
+    setPhone(value);
+    validatePhone(value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (phoneError) return;
+
+    setIsSubmitting(true);
+    const formData = new FormData(e.target);
+
+    try {
+      await fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLSdJt5bsPhh4IRkFlCMZV3VuTSbK4ADFyZqscHa65ZRwZmPhJw/formResponse",
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: formData,
+        }
+      );
+      alert("Your message has been submitted! ✅");
+      e.target.reset();
+      setPhone("");
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("There was an error submitting the form.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="cleaning-page">
       {/* Hero Section */}
@@ -62,9 +107,11 @@ function Service7() {
           <h1>House Washing</h1>
           <h2>Safe & Effective Exterior Cleaning</h2>
           <p>
-            Ivory Standard’s house washing restores your home’s exterior to its best. We safely remove dirt, mold, and grime with our proven soft wash methods — protecting paint and siding.
+            Ivory Standard’s house washing restores your home’s exterior to its best.
+            We safely remove dirt, mold, and grime with our proven soft wash methods —
+            protecting paint and siding.
           </p>
-            <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
+          <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
         </div>
       </section>
 
@@ -75,10 +122,12 @@ function Service7() {
           <div className="benefits-text">
             <h2 className="heading01">Our House Washing Service</h2>
             <p className="para01">
-              Over time, your home’s exterior can collect mold, mildew, algae, and dirt. Our soft wash process gently lifts away buildup without high pressure that can damage siding.
+              Over time, your home’s exterior can collect mold, mildew, algae, and dirt.
+              Our soft wash process gently lifts away buildup without high pressure that can damage siding.
             </p>
             <p className="para01">
-              We use safe, eco-friendly solutions to clean vinyl, brick, stucco, and painted surfaces. The result? A refreshed, bright exterior that boosts curb appeal and extends the life of your home’s finish.
+              We use safe, eco-friendly solutions to clean vinyl, brick, stucco, and painted surfaces.
+              The result? A refreshed, bright exterior that boosts curb appeal and extends the life of your home’s finish.
             </p>
           </div>
         </div>
@@ -97,7 +146,9 @@ function Service7() {
           <div>
             <h2 className="heading01">Why Choose Us for House Washing?</h2>
             <p className="para02">
-              Ivory Standard’s trusted professionals combine gentle techniques with attention to detail. We protect your siding and paint while delivering dramatic results that last — giving you peace of mind and a home that looks new again.
+              Ivory Standard’s trusted professionals combine gentle techniques with attention to detail.
+              We protect your siding and paint while delivering dramatic results that last —
+              giving you peace of mind and a home that looks new again.
             </p>
           </div>
           <img src={i2} alt="About House Washing" />
@@ -129,30 +180,40 @@ function Service7() {
       >
         <div className="quote-overlay"></div>
         <div className="quote-form">
-          <form>
-            <h2 className="form-heading">Request Your Free Quote</h2>
-            <br/>
+          <form onSubmit={handleSubmit}>
             <div className="form-row">
-              <input type="text" placeholder="First Name" required />
-              <input type="text" placeholder="Last Name" required />
+              <input type="text" placeholder="Name" name="entry.1009275927" required />
+              <input type="text" placeholder="Last Name" name="entry.1818453183" required />
             </div>
             <div className="form-row">
-              <input type="tel" placeholder="Phone Number" required />
-              <input type="email" placeholder="Email Address" required />
+              <input
+                type="tel"
+                placeholder="Phone"
+                name="entry.518933839"
+                value={phone}
+                onChange={handlePhoneChange}
+                required
+              />
+              <input type="email" placeholder="Email" name="entry.1421178179" required />
             </div>
+            {phoneError && (
+              <p style={{ color: "white", fontSize: "0.9rem", marginTop: "4px" }}>{phoneError}</p>
+            )}
             <div className="form-row">
-              <input type="text" placeholder="Zip Code" />
-              <input type="text" placeholder="Approx. Square Footage" />
+              <input type="text" placeholder="Zip Code" name="entry.1407045223" required />
+              <input type="text" placeholder="Square Footage" name="entry.1247129266" />
             </div>
             <div className="form-row2">
-              <input type="text" placeholder="Desired Services" />
-              <input type="text" placeholder="How did you hear about us?" />
+              <input type="text" placeholder="Desired Services" name="entry.1509664965" />
+              <input type="text" placeholder="How did you hear about us?" name="entry.1104108847" />
             </div>
             <div className="checkbox-container">
               <input type="checkbox" id="terms" required />
-              <label htmlFor="terms">I agree to receive updates and quotes.</label>
+              <label htmlFor="terms">Agree to terms and updates</label>
             </div>
-            <button className="green-btn1" type="submit">Submit</button>
+            <button type="submit" className="green-btn1" disabled={phoneError || isSubmitting}>
+              {isSubmitting ? "Submitting..." : "SUBMIT"}
+            </button>
           </form>
         </div>
       </section>
@@ -191,9 +252,11 @@ function Service7() {
         }}
       >
         <h2>LET'S DO IT!</h2>
-        <p>Book your house washing with Ivory Standard — restore your home’s curb appeal today!</p>
+        <p>
+          Book your house washing with Ivory Standard — restore your home’s curb appeal today!
+        </p>
         <div className="buttons">
-              <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
+          <a href="#quote"><button className="dark-btn">Request a Quote</button></a>
         </div>
       </section>
     </div>
