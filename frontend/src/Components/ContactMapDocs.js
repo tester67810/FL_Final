@@ -52,7 +52,7 @@ function ContactMapDocs() {
             <h1>Get in Contact</h1>
             <p><span>📞</span> +1-631.229.6314</p>
             {/* <p><span>📧</span> ivorystandardllc@gmail.com</p> */}
-            <p><span>🌐</span> cleaning@ivorystandard.com</p>
+            <p><span>🌐</span> ivorystandardllc@gmail.com</p>
             <img src={contactImg} alt="Contact Visual" className="contact-image1" />
           </div>
 
