@@ -50,7 +50,7 @@ function ContactMapDocs() {
         <section className="contact-section1">
           <div className="contact-left1">
             <h1>Get in Contact</h1>
-            <p><span>📞</span> (425) 410–4589</p>
+            <p><span>📞</span> +1-631.229.6314</p>
             {/* <p><span>📧</span> ivorystandardllc@gmail.com</p> */}
             <p><span>🌐</span> cleaning@ivorystandard.com</p>
             <img src={contactImg} alt="Contact Visual" className="contact-image1" />
