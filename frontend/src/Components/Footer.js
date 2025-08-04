@@ -46,8 +46,8 @@ function Footer() {
           <p className="ft-list-title">Contact</p>
           <ul className="ft-list-items">
             <li>ivorystandardllc@gmail.com</li>
-            <li>+91 98765 43210</li>
-            <li>+91 91234 56789</li>
+            <li>+1-631.229.6314</li>
+            
           </ul>
         </div>
       </div>
