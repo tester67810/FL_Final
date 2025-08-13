@@ -74,7 +74,7 @@ function Service7() {
 
     try {
       await fetch(
-        "https://docs.google.com/forms/d/e/1FAIpQLSdJt5bsPhh4IRkFlCMZV3VuTSbK4ADFyZqscHa65ZRwZmPhJw/formResponse",
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHJ7tzqv4qFWHG5QvyKAlIf0IU1SPaxIVgEvXxW7t6sBMhvQ/formResponse",
         {
           method: "POST",
           mode: "no-cors",
@@ -182,36 +182,40 @@ function Service7() {
         <div className="quote-form">
           <form onSubmit={handleSubmit}>
             <div className="form-row">
-              <input type="text" placeholder="Name" name="entry.1009275927" required />
-              <input type="text" placeholder="Last Name" name="entry.1818453183" required />
+              <input type="text" placeholder="Name" name="entry.13342060" required />
+              <input type="text" placeholder="Last Name" name="entry.1081741078" required />
             </div>
             <div className="form-row">
               <input
                 type="tel"
                 placeholder="Phone"
-                name="entry.518933839"
+                name="entry.1635705749"
                 value={phone}
                 onChange={handlePhoneChange}
                 required
               />
-              <input type="email" placeholder="Email" name="entry.1421178179" required />
+              <input type="email" placeholder="Email" name="entry.247003339" required />
             </div>
             {phoneError && (
               <p style={{ color: "white", fontSize: "0.9rem", marginTop: "4px" }}>{phoneError}</p>
             )}
             <div className="form-row">
-              <input type="text" placeholder="Zip Code" name="entry.1407045223" required />
-              <input type="text" placeholder="Square Footage" name="entry.1247129266" />
+              <input type="text" placeholder="Zip Code" name="entry.2100411222" required />
+              <input type="text" placeholder="Square Footage" name="entry.248273012" />
             </div>
             <div className="form-row2">
-              <input type="text" placeholder="Desired Services" name="entry.1509664965" />
-              <input type="text" placeholder="How did you hear about us?" name="entry.1104108847" />
+              <input type="text" placeholder="Desired Services" name="entry.678365288" />
+              <input type="text" placeholder="How did you hear about us?" name="entry.74233113" />
             </div>
             <div className="checkbox-container">
               <input type="checkbox" id="terms" required />
               <label htmlFor="terms">Agree to terms and updates</label>
             </div>
-            <button type="submit" className="green-btn1" disabled={phoneError || isSubmitting}>
+            <button
+              type="submit"
+              className="green-btn1"
+              disabled={phoneError || isSubmitting}
+            >
               {isSubmitting ? "Submitting..." : "SUBMIT"}
             </button>
           </form>

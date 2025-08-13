@@ -71,7 +71,7 @@ function ContactUs() {
             <label>Your Name</label>
             <input
               type="text"
-              name="entry.7645755"
+             name="entry.879204363"
               placeholder="Enter your Full Name"
               required
             />
@@ -81,7 +81,7 @@ function ContactUs() {
                 <label style={{color: "black"}}>Email Address</label>
                 <input
                   type="email"
-                  name="entry.1736458666"
+                 name="entry.2106038684"
                   placeholder="example@domain.com"
                   required
                   style={{ marginTop: "10px" }}
@@ -92,7 +92,7 @@ function ContactUs() {
                  <label style={{color: "black"}}>Phone Number</label>
                 <input
                   type="text"
-                  name="entry.1855476598"
+                  name="entry.1089746240"
                   placeholder="Required for Updates"
                   value={phone}
                   onChange={handlePhoneChange}
@@ -116,7 +116,7 @@ function ContactUs() {
 
             <label>Your Message</label>
             <textarea
-              name="entry.2033202038"
+              name="entry.276216902"
               placeholder="Tell us how we can help..."
               rows="4"
               required

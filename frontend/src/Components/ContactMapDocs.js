@@ -26,7 +26,7 @@ function ContactMapDocs() {
 
     try {
       await fetch(
-        "https://docs.google.com/forms/d/e/1FAIpQLSe2FFN6hMy76EUzKHLPgLpSBSi2vOtC7efKYbE2U4XC3KPsTw/formResponse",
+        "https://docs.google.com/forms/d/e/1FAIpQLSdDjJqRnhb-D6JeQomokkusnNCyBc-1GLeqY7W8QQRgdpXb0Q/formResponse",
         {
           method: "POST",
           mode: "no-cors",
@@ -60,7 +60,7 @@ function ContactMapDocs() {
             <div className="form-wrap1">
               <input
                 type="text"
-                name="entry.7645755"
+                name="entry.879204363"
                 placeholder="Name"
                 required
               />
@@ -68,14 +68,14 @@ function ContactMapDocs() {
               <div className="form-row1">
                 <input
                   type="email"
-                  name="entry.1736458666"
+                  name="entry.2106038684"
                   placeholder="Email"
                   required
                 />
 
                 <input
                   type="tel"
-                  name="entry.1855476598"
+                  name="entry.1089746240"
                   placeholder="Cell phone"
                   pattern="[0-9]{10}"
                   onBlur={validatePhone}
@@ -88,7 +88,7 @@ function ContactMapDocs() {
               )}
 
               <textarea
-                name="entry.2033202038"
+                name="entry.276216902"
                 placeholder="Message"
                 rows="5"
                 required
