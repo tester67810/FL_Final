@@ -74,7 +74,7 @@ function Service13() {
 
     try {
       await fetch(
-        "https://docs.google.com/forms/d/e/1FAIpQLSdJt5bsPhh4IRkFlCMZV3VuTSbK4ADFyZqscHa65ZRwZmPhJw/formResponse",
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHJ7tzqv4qFWHG5QvyKAlIf0IU1SPaxIVgEvXxW7t6sBMhvQ/formResponse",
         {
           method: "POST",
           mode: "no-cors",
