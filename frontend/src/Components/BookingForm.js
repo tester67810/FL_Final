@@ -1,6 +1,9 @@
 
 
-  
+
+
+
+
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import "../Styles/BookingForm.css";
@@ -178,69 +181,84 @@ function BookingForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const requiredFields = ["firstName", "lastName", "email", "phone", "address", "date"];
+    setLoading(true); // start loading spinner
 
-    if (formState.service === "Regular Cleaning" && !formState.frequency) {
-      alert("Please select a cleaning frequency.");
-      return;
-    }
+    try {
+      const requiredFields = ["firstName", "lastName", "email", "phone", "address", "date"];
 
-    for (const field of requiredFields) {
-      if (!formState[field]) {
-        alert(`Please fill out the ${field}`);
+      if (formState.service === "Regular Cleaning" && !formState.frequency) {
+        alert("Please select a cleaning frequency.");
+        setLoading(false);
         return;
       }
-    }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
-      alert("Invalid email format");
-      return;
-    }
+      for (const field of requiredFields) {
+        if (!formState[field]) {
+          alert(`Please fill out the ${field}`);
+          setLoading(false);
+          return;
+        }
+      }
 
-    for (const q of instructionQuestions) {
-      if (!formState.instructions[q]) {
-        alert(`Missing answer for: ${q}`);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
+        alert("Invalid email format");
+        setLoading(false);
         return;
       }
+
+      for (const q of instructionQuestions) {
+        if (!formState.instructions[q]) {
+          alert(`Missing answer for: ${q}`);
+          setLoading(false);
+          return;
+        }
+      }
+
+      const { halfBath, parkingFee, firstName, lastName, ...rest } = formState;
+      const formData = {
+        ...rest,
+        half_bath: halfBath,
+        parking_fee: parkingFee,
+        first_name: firstName,
+        last_name: lastName,
+        payment_status: "pending",
+      };
+
+      const { data, error } = await supabase.from("bookings1").insert([formData]).select();
+
+      if (error) {
+        alert("Failed: " + error.message);
+        setLoading(false);
+        return;
+      }
+
+      const bookingId = data[0].id;
+      const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/create-checkout-session`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: parseFloat(calculateTotal()) * 100,
+          bookingId,
+          email: formState.email,
+        }),
+      });
+
+      const session = await res.json();
+      if (session.url) {
+        window.location.href = session.url;
+      } else {
+        alert("Stripe redirect failed");
+        setLoading(false);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong.");
+      setLoading(false);
     }
-
-    const { halfBath, parkingFee, firstName, lastName, ...rest } = formState;
-    const formData = {
-      ...rest,
-      half_bath: halfBath,
-      parking_fee: parkingFee,
-      first_name: firstName,
-      last_name: lastName,
-      payment_status: "pending",
-    };
-
-    const { data, error } = await supabase.from("bookings1").insert([formData]).select();
-
-    if (error) {
-      alert("Failed: " + error.message);
-      return;
-    }
-
-    const bookingId = data[0].id;
-    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
-    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/create-checkout-session`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        amount: parseFloat(calculateTotal()) * 100,
-        bookingId,
-        email: formState.email,
-      }),
-    });
-
-    const session = await res.json();
-    if (session.url) window.location.href = session.url;
-    else alert("Stripe redirect failed");
   };
 
-  const renderStars = (count) => "⭐".repeat(count);
-
-  return (
+   return (
     <div className="booking-layout">
       <div className="form-wrapper">
         <div className="booking-container">
@@ -519,4 +537,3 @@ function BookingForm() {
 }
 
 export default BookingForm;
-
