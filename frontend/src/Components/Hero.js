@@ -28,7 +28,7 @@ function Hero() {
     <div className="hero-wrapper" style={{ backgroundImage: `url(${Background})` }}>
       <div className="overlay"></div>
       <div className="hero-content left-aligned">
-        <p className="head">Vidya Rajesh Gowda Elevate Your Space with Ivory Standard</p>
+        <p className="head">Elevate Your Space with Ivory Standard</p>
         <p className="subtitle">Professional cleaning that brings clarity, comfort, and care to every corner.</p>
         <p className="description">At Ivory Standard – The Cleaning Company, spotless living starts with trusted service.</p>
         <div className="hero-buttons">
