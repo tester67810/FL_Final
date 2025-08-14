@@ -42,6 +42,40 @@ function BookingForm() {
     ],
   };
 
+// In your component:
+
+const handleConfirmAndPay = async () => {
+  try {
+    setLoading(true); // Show loading overlay/spinner
+
+    const stripe = await stripePromise;
+
+    // Example: Call your backend to create a Checkout Session
+    const response = await fetch("/create-checkout-session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formState),
+    });
+
+    const session = await response.json();
+
+    // Redirect to Stripe
+    const { error } = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+
+    if (error) {
+      console.error(error);
+      setLoading(false); // Hide loader if redirect fails
+    }
+  } catch (err) {
+    console.error(err);
+    setLoading(false);
+  }
+};
+
+
+
   const [formState, setFormState] = useState({
     location: "Snohomish County",
     service: "Select Option",
@@ -501,9 +535,21 @@ function BookingForm() {
 
           {/* You can add your full form fields here like service, frequency, bedrooms, etc. */}
 
-          <button className="submit-btn" onClick={handleSubmit}>
-            Confirm & Pay
-          </button>
+         <button
+  onClick={handleConfirmAndPay}
+  disabled={loading}
+  className={`pay-button ${loading ? "loading" : ""}`}
+>
+  {loading ? "Processing..." : "Confirm & Pay"}
+</button>
+
+{loading && (
+  <div className="loading-overlay">
+    <div className="spinner"></div>
+    <p>Redirecting to secure payment...</p>
+  </div>
+)}
+
         </div>
       </div>
 
