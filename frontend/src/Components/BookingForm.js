@@ -1,6 +1,10 @@
 
 
   
+
+
+
+
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import "../Styles/BookingForm.css";
@@ -64,7 +68,7 @@ function BookingForm() {
   });
 
   const [currentReview, setCurrentReview] = useState(0);
-  const [openFAQ, setOpenFAQ] = useState(null);
+  const [loading, setLoading] = useState(false); // NEW loading state
 
   const reviews = [
     { text: "Fantastic service, spotless clean!", author: "Emily R.", stars: 5 },
@@ -132,7 +136,6 @@ function BookingForm() {
     } = formState;
 
     let subtotal = 0;
-
     let rates = { bed: 0, bath: 0, half: 0, den: 0, serviceCharge: 0 };
 
     if (service === "Regular Cleaning") {
@@ -149,7 +152,6 @@ function BookingForm() {
         default:
           rates = { bed: 20.62, bath: 25.78, half: 15.47, den: 25.78, serviceCharge: 108.25 };
       }
-
       subtotal += bedrooms * rates.bed + bathrooms * rates.bath + halfBath * rates.half + den * rates.den + rates.serviceCharge;
     } else if (["Deep Cleaning", "Move Out & Move In"].includes(service)) {
       rates = { bed: 30.03, bath: 25.78, half: 15.47, den: 25.78, serviceCharge: 201.94 };
@@ -159,7 +161,7 @@ function BookingForm() {
     }
 
     Object.values(extras).forEach((count) => {
-      subtotal += count * 0; // each extra = $0, update if needed
+      subtotal += count * 0;
     });
 
     if (tip.endsWith("%")) {
@@ -178,64 +180,75 @@ function BookingForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const requiredFields = ["firstName", "lastName", "email", "phone", "address", "date"];
+    if (loading) return; // avoid double clicks
+    setLoading(true);
 
-    if (formState.service === "Regular Cleaning" && !formState.frequency) {
-      alert("Please select a cleaning frequency.");
-      return;
-    }
+    try {
+      const requiredFields = ["firstName", "lastName", "email", "phone", "address", "date"];
 
-    for (const field of requiredFields) {
-      if (!formState[field]) {
-        alert(`Please fill out the ${field}`);
+      if (formState.service === "Regular Cleaning" && !formState.frequency) {
+        alert("Please select a cleaning frequency.");
+        setLoading(false);
         return;
       }
-    }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
-      alert("Invalid email format");
-      return;
-    }
+      for (const field of requiredFields) {
+        if (!formState[field]) {
+          alert(`Please fill out the ${field}`);
+          setLoading(false);
+          return;
+        }
+      }
 
-    for (const q of instructionQuestions) {
-      if (!formState.instructions[q]) {
-        alert(`Missing answer for: ${q}`);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
+        alert("Invalid email format");
+        setLoading(false);
         return;
       }
+
+      for (const q of instructionQuestions) {
+        if (!formState.instructions[q]) {
+          alert(`Missing answer for: ${q}`);
+          setLoading(false);
+          return;
+        }
+      }
+
+      const { halfBath, parkingFee, firstName, lastName, ...rest } = formState;
+      const formData = {
+        ...rest,
+        half_bath: halfBath,
+        parking_fee: parkingFee,
+        first_name: firstName,
+        last_name: lastName,
+        payment_status: "pending",
+      };
+
+      const { data, error } = await supabase.from("bookings1").insert([formData]).select();
+      if (error) throw new Error(error.message);
+
+      const bookingId = data[0].id;
+      const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/create-checkout-session`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: parseFloat(calculateTotal()) * 100,
+          bookingId,
+          email: formState.email,
+        }),
+      });
+
+      const session = await res.json();
+      if (session.url) {
+        window.location.href = session.url;
+      } else {
+        throw new Error("Stripe redirect failed");
+      }
+    } catch (err) {
+      alert("Error: " + err.message);
+      setLoading(false);
     }
-
-    const { halfBath, parkingFee, firstName, lastName, ...rest } = formState;
-    const formData = {
-      ...rest,
-      half_bath: halfBath,
-      parking_fee: parkingFee,
-      first_name: firstName,
-      last_name: lastName,
-      payment_status: "pending",
-    };
-
-    const { data, error } = await supabase.from("bookings1").insert([formData]).select();
-
-    if (error) {
-      alert("Failed: " + error.message);
-      return;
-    }
-
-    const bookingId = data[0].id;
-    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
-    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/create-checkout-session`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        amount: parseFloat(calculateTotal()) * 100,
-        bookingId,
-        email: formState.email,
-      }),
-    });
-
-    const session = await res.json();
-    if (session.url) window.location.href = session.url;
-    else alert("Stripe redirect failed");
   };
 
   const renderStars = (count) => "⭐".repeat(count);
@@ -519,4 +532,3 @@ function BookingForm() {
 }
 
 export default BookingForm;
-
