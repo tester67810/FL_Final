@@ -3,6 +3,20 @@ import "../Styles/Faq.css";
 
 const FAQData = [
   {
+  question: "Can I reschedule my booking?",
+  answer: [
+    "Yes, you can reschedule your booking easily.",
+    "Send a quote message and our team will contact you.",
+  ],
+},
+{
+  question: "How do I cancel a booking?",
+  answer: [
+    "You can cancel your booking by sending a quote message.",
+    "Our team will contact you to confirm the cancellation.",
+  ],
+},
+  {
     question: "How do I book a cleaning service?",
     answer: [
       "Booking is simple! Just click on the 'Book Now' button on our website.",
