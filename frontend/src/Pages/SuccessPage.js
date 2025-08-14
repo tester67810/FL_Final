@@ -1,34 +1,48 @@
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { supabase } from "../supabaseClient";
 
 export default function SuccessPage() {
   const [searchParams] = useSearchParams();
-  const sessionId = searchParams.get("session_id");
-  const [details, setDetails] = useState(null);
+  const bookingId = searchParams.get("booking_id");
+
+  const [booking, setBooking] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (sessionId) {
-      fetch(`https://your-server-url.com/session/${sessionId}`)
-        .then(res => res.json())
-        .then(data => setDetails(data))
-        .catch(err => console.error(err));
-    }
-  }, [sessionId]);
+    const fetchBooking = async () => {
+      if (!bookingId) return;
+
+      const { data, error } = await supabase
+        .from("bookings1")
+        .select("*")
+        .eq("id", bookingId)
+        .single();
+
+      if (error) {
+        console.error("Error fetching booking:", error);
+      } else {
+        setBooking(data);
+      }
+      setLoading(false);
+    };
+
+    fetchBooking();
+  }, [bookingId]);
+
+  if (loading) return <p style={{ textAlign: "center" }}>Loading booking details...</p>;
+  if (!booking) return <p style={{ textAlign: "center" }}>Booking not found.</p>;
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h1>✅ Payment Successful!</h1>
-
-      {details ? (
-        <div>
-          <p><strong>Amount:</strong> {(details.amount_total / 100).toFixed(2)} {details.currency.toUpperCase()}</p>
-          <p><strong>Email:</strong> {details.customer_details?.email}</p>
-          <p><strong>Payment Method:</strong> {details.payment_intent?.payment_method_types[0]}</p>
-          <p><strong>Date:</strong> {new Date(details.created * 1000).toLocaleString()}</p>
-        </div>
-      ) : (
-        <p>Loading payment details...</p>
-      )}
+      <h2>Booking Details</h2>
+      <p><strong>Name:</strong> {booking.first_name} {booking.last_name}</p>
+      <p><strong>Email:</strong> {booking.email}</p>
+      <p><strong>Phone:</strong> {booking.phone}</p>
+      <p><strong>Service:</strong> {booking.service}</p>
+      <p><strong>Location:</strong> {booking.location}</p>
+      <p><strong>Date:</strong> {booking.date}</p>
     </div>
   );
 }
