@@ -6,14 +6,18 @@ const FAQData = [
   question: "Can I reschedule my booking?",
   answer: [
     "Yes, you can reschedule your booking easily.",
-    "Send a quote message and our team will contact you.",
+    "Simply contact our support team at least 24 hours before your scheduled service.",
+    "📞 +1-631.229.6314",
+    "🌐 ivorystandardllc@gmail.com",
   ],
 },
 {
   question: "How do I cancel a booking?",
   answer: [
-    "You can cancel your booking by sending a quote message.",
-    "Our team will contact you to confirm the cancellation.",
+    "You can cancel your booking by contacting our support team.",
+    "Please cancel at least 24 hours in advance.",
+    "📞 +1-631.229.6314",
+    "🌐 ivorystandardllc@gmail.com",
   ],
 },
   {
