@@ -68,6 +68,10 @@ function BookingForm() {
 
   const [currentReview, setCurrentReview] = useState(0);
   const [openFAQ, setOpenFAQ] = useState(null);
+  const [loading, setLoading] = useState(false); // for Confirm & Pay spinner
+
+  const renderStars = (count) => "⭐".repeat(count);
+
 
   const reviews = [
     { text: "Fantastic service, spotless clean!", author: "Emily R.", stars: 5 },
