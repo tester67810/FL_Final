@@ -187,11 +187,11 @@ const calculateTotal = () => {
 
       const session = await response.json();
 
-      if (session.url) {
-        window.location.href = session.url;
-      } else {
-        alert("Failed to redirect to payment.");
-      }
+          if (session.url) {
+  window.open(session.url, "_blank"); // opens in a new tab
+} else {
+  throw new Error("Stripe redirect failed");
+}
     } catch (err) {
       console.error("Payment error:", err);
       alert("Payment error occurred.");
