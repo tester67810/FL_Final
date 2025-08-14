@@ -235,11 +235,12 @@ function BookingForm() {
       });
 
       const session = await res.json();
-      if (session.url) {
-        window.location.href = session.url;
-      } else {
-        throw new Error("Stripe redirect failed");
-      }
+     if (session.url) {
+  window.open(session.url, "_blank"); // opens in a new tab
+} else {
+  throw new Error("Stripe redirect failed");
+}
+
     } catch (err) {
       alert("Error: " + err.message);
       setLoading(false);
