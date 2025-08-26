@@ -187,11 +187,12 @@ const calculateTotal = () => {
 
       const session = await response.json();
 
-          if (session.url) {
-  window.open(session.url, "_blank"); // opens in a new tab
+        if (session.url) {
+  window.location.href = session.url;
 } else {
   throw new Error("Stripe redirect failed");
 }
+
     } catch (err) {
       console.error("Payment error:", err);
       alert("Payment error occurred.");
@@ -465,3 +466,6 @@ return (
 }
 
 export default BookingForm3;
+
+
+

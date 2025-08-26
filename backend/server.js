@@ -259,8 +259,9 @@ app.post("/create-checkout-session", async (req, res) => {
       ],
       customer_email: email,
       metadata: { bookingId: bookingId.toString() },
-      success_url: `https://fl-final.vercel.app/success`,
-      cancel_url: `https://fl-final.vercel.app/cancel`,
+     success_url: `https://fl-final.vercel.app/success?bookingId=${bookingId}`,
+cancel_url: `https://fl-final.vercel.app/cancel`,
+
     });
 
     res.json({ url: session.url });
