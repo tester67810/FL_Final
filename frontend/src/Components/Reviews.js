@@ -1,7 +1,6 @@
 import React from "react";
 import "../Styles/Reviews.css";
 
-// Import images
 import user1 from "../Assets/testimonial1.jpg";
 import user2 from "../Assets/testimonial2.jpg";
 import user3 from "../Assets/testimonial3.jpg";
@@ -53,7 +52,7 @@ function Testimonial() {
         ))}
       </div>
 
-      {/* Add Testimonial Button */}
+    
       <div style={{ textAlign: "center", marginTop: "3rem" }}>
         <a
           href="https://forms.gle/LQeMtzXkQvcbmmyj7"
