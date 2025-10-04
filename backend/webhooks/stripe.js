@@ -4,7 +4,7 @@ const Stripe = require('stripe');
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const { createClient } = require('@supabase/supabase-js');
 
-// Initialize Supabase
+
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -23,13 +23,13 @@ router.post('/stripe', express.raw({ type: 'application/json' }), async (req, re
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
-  // Handle the event
+
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
 
-    console.log('✅ Payment completed:', session.id);
+    console.log('Payment completed:', session.id);
 
-    // Update Supabase record
+
     const { error } = await supabase
       .from('payments')
       .update({ status: 'paid' })
