@@ -19,7 +19,7 @@ function AppointmentForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate form inputs
+  
     const errors = {};
     if (!patientName.trim()) {
       errors.patientName = "Patient name is required";
