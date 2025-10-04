@@ -17,20 +17,12 @@ function Home() {
       <Navbar />
       <Hero />
 
-      {/* Optional: Info Section */}
-      {/* <Info /> */}
-
-      {/* Optional: About Section */}
-      {/* <About /> */}
+  
  <section id="about">  <BookAppointment /></section>
     
       <Services />
       <Reviews />
 
-      {/* Optional: Doctors Section */}
-      {/* <Doctors /> */}
-
-      {/* Add id for hash scroll target */}
       <section id="faq">
         <Faq />
       </section>
