@@ -74,7 +74,7 @@ function Navbar() {
 
       </ul>
 
-      {/* Desktop-only login button */}
+  
       <Link to="/house_cleaning" className="login-btn desktop-only">Book Now</Link>
     </nav>
   );
