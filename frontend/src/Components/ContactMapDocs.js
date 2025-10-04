@@ -34,7 +34,7 @@ function ContactMapDocs() {
         }
       );
 
-      alert("Your message has been submitted! ✅");
+      alert("Your message has been submitted!");
       e.target.reset();
     } catch (err) {
       console.error("Submission error:", err);
