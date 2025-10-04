@@ -1,8 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-
-// Pages
 import Home from "./Pages/Home";
 import Legal from "./Pages/Legal";
 import NotFound from "./Pages/NotFound";
@@ -24,11 +22,8 @@ import Service12Page from "./Pages/Service12Page";
 import Service13Page from "./Pages/Service13Page";
 import Service14Page from "./Pages/Service14Page";
 import Blogs from "./Components/Blogs"
-
-
-// Global Components
 import ScrollUpButton from "./Components/ScrollUpButton";
-import ScrollToTop from "./Components/ScrollToTop"; // ✅ NEW: Import scroll-to-top fix
+import ScrollToTop from "./Components/ScrollToTop"; 
 import Booking2 from "./Pages/Booking2";
 import Booking3 from "./Pages/Booking3";
 import Booking4 from "./Pages/Booking4";
@@ -43,16 +38,13 @@ import BlogP5 from "./Pages/BlogP5";
 import BlogP6 from "./Pages/BlogP6";
 import AboutPage from "./Pages/AboutPage";
 import FaqPage from "./Pages/FaqPage";
-
 function App() {
   return (
     <div className="App">
       <Router>
-        <ScrollToTop /> {/* ✅ Ensure scroll resets on route change */}
-
+        <ScrollToTop /> 
         <Routes>
           <Route path="/" element={<Home />} />
-
           <Route path="/legal" element={<Legal />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/contact" element={<ContactMap />} />
@@ -69,26 +61,25 @@ function App() {
           <Route path="/corporate-office" element={<Service11Page />} />
           <Route path="/retail-space" element={<Service12Page />} />
           <Route path="/vrbo-and-airbnb" element={<Service13Page />} />
-             <Route path="/mold-remediation" element={<Service14Page />} />
-    <Route path="/blog/:id" element={<SinglePost />} />
+          <Route path="/mold-remediation" element={<Service14Page />} />
+          <Route path="/blog/:id" element={<SinglePost />} />
           <Route path="/house_cleaning" element={<Booking />} />
           <Route path="/exterior_cleaning" element={<Booking2 />} />
           <Route path="/carpet_cleaning" element={<Booking3 />} />
           <Route path="/commercial_cleaning" element={<Booking4 />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="*" element={<NotFound />} />
-            <Route path="/success" element={<SuccessPage/>} />
-        <Route path="/cancel" element={<CancelPage />} />
-            <Route path="/blog1" element={<BlogP1 />} />
+          <Route path="/success" element={<SuccessPage/>} />
+          <Route path="/cancel" element={<CancelPage />} />
+          <Route path="/blog1" element={<BlogP1 />} />
           <Route path="/blog2" element={<BlogP2 />} />
           <Route path="/blog3" element={<BlogP3 />} />
           <Route path="/blog4" element={<BlogP4 />} />
           <Route path="/blog5" element={<BlogP5 />} />
           <Route path="/blog6" element={<BlogP6 />} />
           <Route path="/about" element={<AboutPage/>} />
-           <Route path="/faqs" element={<FaqPage/>} />
+          <Route path="/faqs" element={<FaqPage/>} />
         </Routes>
-
         <ScrollUpButton />
       </Router>
     </div>
