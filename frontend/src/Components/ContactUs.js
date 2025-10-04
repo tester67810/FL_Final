@@ -39,7 +39,7 @@ function ContactUs() {
         }
       );
 
-      alert("Your message has been submitted! ✅");
+      alert("Your message has been submitted!");
       e.target.reset();
       setPhone("");
     } catch (error) {
