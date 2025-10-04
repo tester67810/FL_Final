@@ -36,7 +36,7 @@ export default function SuccessPage() {
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1 style={{ color: "green" }}>✅ Payment Successful</h1>
+      <h1 style={{ color: "green" }}>Payment Successful</h1>
 
       {error ? (
         <p>Thank you for your booking!</p>
