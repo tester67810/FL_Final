@@ -3,7 +3,7 @@ import "../Styles/Blog.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-// Import image used in blog post
+
 import blog2 from "../Assets/House-cleaning2.webp";
 
 function Blog2() {
