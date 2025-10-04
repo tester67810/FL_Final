@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
-import "../Styles/Hero.css"; // Reuse your scroll-up styling
-
+import "../Styles/Hero.css"; 
 function ScrollUpButton() {
   const [showButton, setShowButton] = useState(false);
 
